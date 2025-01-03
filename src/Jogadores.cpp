@@ -9,7 +9,7 @@ Jogador::Jogador(std::string apelido, std::string nome){
 }
 
 void Jogador::removerJogador(std::string apelido){
-    delete this;
+    Jogador::~Jogador();
 }
 
 std::string Jogador::mostrarApelido(){

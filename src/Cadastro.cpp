@@ -1,29 +1,32 @@
 #include <iostream>
 #include <vector>
+#include <fstream>
 #include "Jogadores.hpp"
+#include "Cadastro.hpp"
 
-void Cadastro(){
+void cadastrarJogador(std::vector<Jogador*> &Jogadores){
     std::string nome, apelido;
     int quantJogadores, flag=1;
-    std::vector<Jogador*> Jogadores;
+    std::ofstream arquivo;
+    
+    //Leitura do nome e do apelido do jogador:
+    std::cin>>nome>>apelido;
 
-    std::cout<<"Quantos jogadores deseja cadastrar?"<<std::endl;
-    std::cin>>quantJogadores;
-
-    for(int i=0;i<quantJogadores;i++){
-        std::cin>>nome>>apelido;
-
-        for(Jogador* j:Jogadores){
-            if((j->mostrarApelido()==apelido)||(j->mostrarApelido()==nome)){
-                std::cout<<"ERRO: jogador repetido";
-                flag=0;
-                break;
-            };
-        };
-        
-        if(flag){
-            Jogadores.push_back(new Jogador(nome,apelido));
-            std::cout<<"Jogador "<<apelido<<" cadastrado com sucesso"<<std::endl;
+    for(Jogador* j:Jogadores){
+        if((j->mostrarApelido()==apelido)||(j->mostrarApelido()==nome)){
+            std::cout<<"ERRO: jogador repetido";
+            flag=0;
+            break;
         };
     };
+        
+    if(flag){
+        Jogadores.push_back(new Jogador(nome,apelido));
+        std::cout<<"Jogador "<<apelido<<" cadastrado com sucesso"<<std::endl;
+    };
+
 };
+
+void removerJogador(std::string apelido){
+
+}
