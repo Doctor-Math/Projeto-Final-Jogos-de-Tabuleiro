@@ -2,6 +2,7 @@
 #include "Jogadores.hpp"
 #include "Cadastro.hpp"
 
+
 int main(){
     std::vector<Jogador*> Jogadores;
     std::string resp=" ";
@@ -24,9 +25,9 @@ int main(){
         if(resp=="CJ"){
             cadastrarJogador(Jogadores);
         }else if(resp=="RJ"){
-
+            removerJogador(Jogadores);
         }else if(resp=="LJ"){
-
+            listarJogadores(Jogadores);
         }else if(resp=="EP"){
 
         }else if(resp!="FS"){

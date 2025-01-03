@@ -8,14 +8,17 @@ Jogador::Jogador(std::string apelido, std::string nome){
     this->nome=nome;
 }
 
-void Jogador::removerJogador(std::string apelido){
-    Jogador::~Jogador();
-}
-
-std::string Jogador::mostrarApelido(){
+std::string Jogador::exibirApelido(){
     return this->apelido;
 }
 
-std::string Jogador::mostrarNome(){
+std::string Jogador::exibirNome(){
     return this->nome;
 }
+
+void Jogador::exibirEstatisticas(){
+    for(int i=0;i<3;i++){
+        std::cout<<this->jogos[i]<<" - V: "<<this->vitorias[i]<<" D: "<<this->derrotas[i]<<std::endl;
+    };
+}
+

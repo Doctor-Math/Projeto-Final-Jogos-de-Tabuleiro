@@ -6,13 +6,23 @@ class Jogador{
     private:
     std::string nome;
     std::string apelido;
-    int vitorias=0;
-    int derrotas=0;
+    std::vector<std::string>jogos={"REVERSI","LIG4","VELHA"};
+    std::vector<int>vitorias;
+    std::vector<int>derrotas;
 
     public:
     Jogador(std::string, std::string);
-    std::string mostrarApelido();
-    std::string mostrarNome();
-    void removerJogador(std::string);
+    void inserirVitoria();
+    void inserirDerrota();
+
+    std::string exibirApelido();
+    std::string exibirNome();
+    void exibirEstatisticas();
+
+    //Definir o operador "<" para operar pelo apelido:
+    bool operator <(const Jogador &outro)const{
+        return apelido < outro.apelido;
+    };
+
     ~Jogador();
 };
