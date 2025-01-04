@@ -6,7 +6,7 @@ class JogoDaVelha: public JogoTabuleiro{
 
     public:
     JogoDaVelha();
-    void validarJogada(int,int) override;
+    void validarJogada(int,int, int) override;
     void verificarVitoria() override;
     void imprimirTabuleiro() override;
     ~JogoDaVelha();

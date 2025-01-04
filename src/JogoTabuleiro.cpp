@@ -9,3 +9,11 @@ void JogoTabuleiro::dimensionarTabuleiro(int i, int j){
         tabuleiro[k].resize(j); // Redimensiona o número de colunas (para cada linha)
     };
 }
+
+void JogoTabuleiro::marcarTabuleiro(int linha, int coluna, char marcacao){
+    this->tabuleiro[linha][coluna]=marcacao;
+};
+
+char JogoTabuleiro::retornarPosicao(int linha, int coluna){
+    return this->tabuleiro[linha][coluna];
+};

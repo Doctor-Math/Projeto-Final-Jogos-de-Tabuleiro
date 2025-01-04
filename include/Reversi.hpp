@@ -6,7 +6,7 @@ class Reversi: public JogoTabuleiro{
 
     public:
     Reversi();
-    void validarJogada(int,int) override;
+    void validarJogada(int,int, int) override;
     void verificarVitoria() override;
     void imprimirTabuleiro() override;
     ~Reversi();
