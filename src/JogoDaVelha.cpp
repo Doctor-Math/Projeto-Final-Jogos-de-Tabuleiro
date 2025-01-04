@@ -1,30 +1,96 @@
 #include <iostream>
 #include "JogoDaVelha.hpp"
 
+const int TAMANHO=3;
+
 JogoDaVelha::JogoDaVelha(){
-    this->dimensionarTabuleiro(3,3);
-}
+    this->dimensionarTabuleiro(TAMANHO,TAMANHO);
+};
 
 void JogoDaVelha::validarJogada(int linha, int coluna, int turno){
-    if((linha-1)>2 || (coluna-1)>2 || linha<0 || coluna<0){
+    linha--;
+    coluna--;
+    if(linha>2 || linha<0 || coluna>2 || coluna<0){
         std::cout<<"ERRO: formato incorreto"<<std::endl;
     }else if(this->retornarPosicao(linha,coluna)=='\0'){
-        if(turno==0){
-            this->marcarTabuleiro(linha,coluna,'X');
-        }else if(turno==1){
-            this->marcarTabuleiro(linha,coluna,'O');
-        };
+        this->marcarTabuleiro(linha,coluna,(turno==0)? 'X':'O');
     }else{
         std::cout<<"ERRO: jogada inválida";
     };
-}
+};
 
 void JogoDaVelha::imprimirTabuleiro(){
-    std::cout<<"|";
-    for(int i=0;i<3;i++){
-        for(int j=0;j<3;j++){
+    for(int i=0;i<TAMANHO;i++){
+        std::cout<<"|";
+        for(int j=0;j<TAMANHO;j++){
             std::cout<<this->retornarPosicao(i,j)<<"|";
         };
-        std::cout<<""<<std::endl;
+        std::cout<<std::endl;
     };
-}
+};
+
+int JogoDaVelha::verificarVitoria(char marcacao){
+    int flag=0;
+
+    //Verifica a diagonal principal:
+    for(int i=0;i<TAMANHO;i++){
+        int j=i;
+
+        if(this->retornarPosicao(i,j)==marcacao){
+            flag=1;
+            if(i==2){
+                return flag;
+            };
+        }else{
+            flag=0;
+            break;
+        };
+    };
+
+    //Verifica a diagonal secundária:
+    int j=2;
+    for(int i=0;i<TAMANHO;i++){
+        if(this->retornarPosicao(i,j)==marcacao){
+            flag=1;
+            if(i==2){
+                return flag;
+            };
+        }else{
+            flag=0;
+            break;
+        };
+        j--;
+    };
+
+    //Verifica as linhas:
+    for(int i=0;i<TAMANHO;i++){
+        for(int j=0;j<TAMANHO;j++){
+            if(this->retornarPosicao(i,j)==marcacao){
+                flag=1;
+                if(j==2){
+                    return flag;
+                }
+            }else{
+                flag=0;
+                break;
+            };
+        };
+    };
+
+    //Verifica as colunas:
+    for(int j=0;j<TAMANHO;j++){
+        for(int i=0;i<TAMANHO;i++){
+            if(this->retornarPosicao(i,j)==marcacao){
+                flag=1;
+                if(i==2){
+                    return flag;
+                }
+            }else{
+                flag=0;
+                break;
+            };
+        };
+    };
+
+    return flag;
+};

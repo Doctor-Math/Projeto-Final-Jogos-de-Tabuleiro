@@ -1,11 +1,13 @@
 #include <iostream>
 #include "Jogadores.hpp"
 #include "Cadastro.hpp"
+#include "ExecucaoPartidas.hpp"
 
 
 int main(){
     std::vector<Jogador*> Jogadores;
-    std::string resp=" ";
+    std::string resp=" ", apelidoJ1, apelidoJ2;
+    char tipoJogo;
     
     std::cout<<"---------Jogos-de-tabuleiro--------"<<std::endl;
     
@@ -29,7 +31,15 @@ int main(){
         }else if(resp=="LJ"){
             listarJogadores(Jogadores);
         }else if(resp=="EP"){
+            std::cout<<"Jogo: ";
+            std::cin>>tipoJogo;
+            std::cout<<"Apelido do jogador 1:";
+            std::cin>>apelidoJ1;
+            std::cout<<"Apelido do jogador 2:";
+            std::cin>>apelidoJ2;
 
+            executarPartida(tipoJogo,apelidoJ1,apelidoJ2);
+            
         }else if(resp!="FS"){
             std::cout<<"Comando inválido"<<std::endl;
         }
