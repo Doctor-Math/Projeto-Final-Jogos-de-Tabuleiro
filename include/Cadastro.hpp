@@ -28,7 +28,7 @@ void cadastrarJogador(std::vector<Jogador*> &Jogadores){
 };
 
 void removerJogador(std::vector<Jogador*> &Jogadores){
-    int contador=0, flag=1;
+    int contador=0, flag=0;
     std::string apelido;
     std::cin>>apelido;
     
@@ -37,7 +37,7 @@ void removerJogador(std::vector<Jogador*> &Jogadores){
         if(j->exibirApelido()==apelido){
             delete j; // Destrói o objeto
             Jogadores.erase(Jogadores.begin()+contador); // Remove o objeto do vetor
-            flag=0;
+            flag=1;
             break;
         }
         contador++;

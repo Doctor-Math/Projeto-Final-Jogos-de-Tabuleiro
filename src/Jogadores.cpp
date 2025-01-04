@@ -22,3 +22,7 @@ void Jogador::exibirEstatisticas(){
     };
 }
 
+Jogador::~Jogador(){
+    delete this;
+};
+
