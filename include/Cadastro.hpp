@@ -1,30 +1,48 @@
 #include <iostream>
 #include <algorithm>
 #include <fstream>
+#include <sstream>
+#include <string>
 #include "Jogadores.hpp"
 
-void cadastrarJogador(std::vector<Jogador*> &Jogadores){
+void cadastrarJogador(){
     std::string nome, apelido;
-    int quantJogadores, flag=1;
-    std::ofstream arquivo;
+    int quantJogadores;
+    std::fstream arquivo;
+
+    arquivo.open("Jogadores.txt",std::ios::out | std::ios::in);
+    if(!arquivo){
+        std::cout<<"ERRO: Arquivo não criado!";
+        return;
+    };
     
     //Leitura do nome e do apelido do jogador:
-    std::cin>>nome>>apelido;
+    std::cin>>apelido>>nome;
 
     //Verifica se o jogador a ser inserido já existe:
-    for(Jogador* j:Jogadores){
-        if((j->exibirApelido()==apelido)||(j->exibirNome()==nome)){
-            std::cout<<"ERRO: jogador repetido";
-            flag=0;
-            break;
+    std::string linha, apelido_jogador;
+    int contador=0;
+    while(std::getline(arquivo,linha)){
+        std::istringstream lineStream(linha);
+        if(contador%4==0){
+            lineStream>>apelido_jogador; //Extração da primeira palavra da linha
+            if(apelido_jogador==apelido){
+                std::cout<<"Erro: jogador repetido"<<std::endl;
+                return;
+            };
         };
+        contador++;
     };
         
-    if(flag){
-        Jogadores.push_back(new Jogador(nome,apelido));
-        std::cout<<"Jogador "<<apelido<<" cadastrado com sucesso"<<std::endl;
-    };
+        arquivo<<apelido<<" "<<nome<<std::endl
+        <<"REVERSI - V: 0 D: 0"<<std::endl
+        <<"LIG4    - V: 0 D: 0"<<std::endl
+        <<"VELHA   - V: 0 D: 0"<<std::endl
+        <<"--------------------"<<std::endl;
 
+        std::cout<<"Jogador "<<apelido<<" cadastrado com sucesso"<<std::endl;
+
+    arquivo.close();
 };
 
 void removerJogador(std::vector<Jogador*> &Jogadores){
