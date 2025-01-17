@@ -64,7 +64,7 @@ void executarPartida(char tipoJogo,std::string apelidoJ1,std::string apelidoJ2){
 
         case 'L':
         {
-
+            Lig4* tabuleiro=new Lig4();
         };
         break;
 
