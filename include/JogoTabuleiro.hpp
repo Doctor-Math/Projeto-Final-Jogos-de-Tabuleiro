@@ -15,5 +15,4 @@ class JogoTabuleiro{
     virtual void imprimirTabuleiro()=0;
     ~JogoTabuleiro();
 
-    int g = 13
 };
