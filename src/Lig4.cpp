@@ -33,4 +33,25 @@ void Lig4::imprimirTabuleiro(){
 };
 
 int Lig4::verificarVitoria(char marcacao){
+    int flag = 0;
+
+    //Verificar nas linhas 
+    for(int i=0;i<TAMANHO;i++){
+       int j = (TAM_COL - 1)/2 
+            if(this->retornarPosicao(i,j)==marcacao){
+                flag=1;
+                if(j==2){
+                    return flag;
+                }
+            }else{
+                flag=0;
+                break;
+            };
+        };
+    };
+
+
+
+
+
     
