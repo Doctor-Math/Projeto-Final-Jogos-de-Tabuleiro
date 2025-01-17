@@ -58,4 +58,5 @@ void listarJogadores(std::vector<Jogador *> Jogadores){
         std::cout<<j->exibirApelido()<<" "<<j->exibirNome()<<std::endl;
         j->exibirEstatisticas();
     }
+int i = 0;
 };
