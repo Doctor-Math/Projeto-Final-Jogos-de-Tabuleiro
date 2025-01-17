@@ -49,7 +49,39 @@ void partidaVelha(std::string apelidoJ1, std::string apelidoJ2, JogoDaVelha* &ta
 
 
 void partidaLig4(std::string apelidoJ1, std::string apelidoJ2){
-    int turno=1;
+    int turno=0, vitoria = 0, coluna;
+    while(vitoria==0){
+      if(turno==0){
+        std::cout<<"Turno do jogador "<<apelidoJ1<<":"<<std::endl;
+
+        std::cout<<"Coluna:";
+        std::cin>>coluna;
+        std::cout<<""<<std::endl;
+
+        tabuleiro->validarJogada(coluna,turno);
+        tabuleiro->imprimirTabuleiro();
+        vitoria=tabuleiro->verificarVitoria('X');
+        if(vitoria){
+            break;
+        };
+        turno++;
+    }else if(turno==1){
+        std::cout<<"Turno do jogador "<<apelidoJ2<<":"<<std::endl;
+
+        std::cout<<"Coluna:";
+        std::cin>>coluna;
+        std::cout<<""<<std::endl;
+
+        tabuleiro->validarJogada(coluna,turno);
+        tabuleiro->imprimirTabuleiro();
+        vitoria=tabuleiro->verificarVitoria('O');
+        if(vitoria){
+            break;
+        };
+        turno--;
+    };
+    };
+
 };
 
 void partidaReversi(std::string apelidoJ1, std::string apelidoJ2){

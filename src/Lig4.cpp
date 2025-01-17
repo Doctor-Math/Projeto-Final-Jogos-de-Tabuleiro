@@ -7,7 +7,7 @@ Lig4::Lig4(){
     this->dimensionarTabuleiro(6,7);
 }
 
-void Lig4::validarJogada(int nulo, int coluna, int turno){
+void Lig4::validarJogada(int coluna, int turno){
     int flag=0;
     coluna--;
     for(int i=(TAM_LINHAS-1);i>=0;i--){
@@ -31,3 +31,6 @@ void Lig4::imprimirTabuleiro(){
         std::cout<<std::endl;
     };
 };
+
+int Lig4::verificarVitoria(char marcacao){
+    
