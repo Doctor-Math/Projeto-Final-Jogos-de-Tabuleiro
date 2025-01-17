@@ -14,4 +14,5 @@ class JogoTabuleiro{
     virtual int verificarVitoria(char)=0;
     virtual void imprimirTabuleiro()=0;
     ~JogoTabuleiro();
+
 };
