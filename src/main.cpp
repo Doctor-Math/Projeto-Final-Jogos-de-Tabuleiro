@@ -2,9 +2,7 @@
 #include "Cadastro.hpp"
 #include "ExecucaoPartidas.hpp"
 
-
 int main(){
-    std::vector<Jogador*> Jogadores;
     std::string resp=" ", apelidoJ1, apelidoJ2;
     char tipoJogo;
     
@@ -24,11 +22,11 @@ int main(){
     while(resp!="FS"){
         std::cin>>resp;
         if(resp=="CJ"){
-            cadastrarJogador(Jogadores);
+            cadastrarJogador();
         }else if(resp=="RJ"){
-            removerJogador(Jogadores);
+            removerJogador();
         }else if(resp=="LJ"){
-            listarJogadores(Jogadores);
+            listarJogadores();
         }else if(resp=="EP"){
             std::cout<<"Jogo: ";
             std::cin>>tipoJogo;
@@ -43,4 +41,4 @@ int main(){
             std::cout<<"Comando inválido"<<std::endl;
         }
     };
-}
+};

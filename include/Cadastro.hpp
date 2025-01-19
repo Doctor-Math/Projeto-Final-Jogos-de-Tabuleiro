@@ -3,77 +3,122 @@
 #include <fstream>
 #include <sstream>
 #include <string>
-#include "Jogadores.hpp"
 
 void cadastrarJogador(){
-    std::string nome, apelido;
-    int quantJogadores;
-    std::fstream arquivo;
+    std::string nome, apelido, arq_nome="Jogadores.txt";
+    std::fstream arquivo(arq_nome,std::ios::in);
 
-    arquivo.open("Jogadores.txt",std::ios::out | std::ios::in);
     if(!arquivo){
-        std::cout<<"ERRO: Arquivo não criado!";
+        std::cout<<"ERRO: Arquivo não encontrado!";
         return;
     };
     
     //Leitura do nome e do apelido do jogador:
     std::cin>>apelido>>nome;
+    apelido.erase(apelido.find_last_not_of(" \t\n\r") + 1); // Remove espaços
+    nome.erase(nome.find_last_not_of(" \t\n\r") + 1); 
 
     //Verifica se o jogador a ser inserido já existe:
-    std::string linha, apelido_jogador;
+    std::string linha;
     int contador=0;
+
     while(std::getline(arquivo,linha)){
-        std::istringstream lineStream(linha);
         if(contador%4==0){
-            lineStream>>apelido_jogador; //Extração da primeira palavra da linha
-            if(apelido_jogador==apelido){
+            if(linha.rfind(apelido,0)==0){
                 std::cout<<"Erro: jogador repetido"<<std::endl;
                 return;
             };
         };
         contador++;
     };
-        
-        arquivo<<apelido<<" "<<nome<<std::endl
-        <<"REVERSI - V: 0 D: 0"<<std::endl
-        <<"LIG4    - V: 0 D: 0"<<std::endl
-        <<"VELHA   - V: 0 D: 0"<<std::endl
-        <<"--------------------"<<std::endl;
 
-        std::cout<<"Jogador "<<apelido<<" cadastrado com sucesso"<<std::endl;
+    arquivo.close();
+
+    arquivo.open(arq_nome,std::ios::app);
+    if(!arquivo){
+        std::cout<<"ERRO: Falha na abertura do arquivo para reescrita"<<std::endl;
+        return;
+    };
+
+    arquivo<<apelido<<" "<<nome<<std::endl
+    <<"REVERSI - V: 0 D: 0"<<std::endl
+    <<"LIG4    - V: 0 D: 0"<<std::endl
+    <<"VELHA   - V: 0 D: 0"<<std::endl
+    <<"--------------------"<<std::endl;
+
+    std::cout<<"Jogador "<<apelido<<" cadastrado com sucesso"<<std::endl;
 
     arquivo.close();
 };
 
-void removerJogador(std::vector<Jogador*> &Jogadores){
-    int contador=0, flag=0;
-    std::string apelido;
-    std::cin>>apelido;
+void removerJogador(){
+    std::string apelido, arq_nome="Jogadores.txt",temp_nome="Temporario.txt";
+    std::ifstream arquivo(arq_nome);
+    // Arquivo intermediário:
+    std::ofstream arq_temp(temp_nome);
+    bool encontrado=false;
+
+    if(!arquivo.is_open() || !arq_temp.is_open()){
+        std::cout<<"Erro ao abrir o arquivo!"<<std::endl;
+        return;
+    };
     
-    //Verifica se o jogador está cadastrado:
-    for(Jogador* j:Jogadores){
-        if(j->exibirApelido()==apelido){
-            delete j; // Destrói o objeto
-            Jogadores.erase(Jogadores.begin()+contador); // Remove o objeto do vetor
-            flag=1;
-            break;
-        }
-        contador++;
+    // Leitura do nome e do apelido do jogador:
+    std::cin>>apelido;
+    apelido.erase(apelido.find_last_not_of(" \t\n\r") + 1); // Remove espaços
+
+    std::string linha, primeira_palavra;
+
+    // Todas as seções do arquivo são copiadas, exceto as pertencentes ao jogador a ser excluído:
+    while(std::getline(arquivo,linha)){
+        if(linha.rfind(apelido,0)==0){
+            encontrado=true;
+            for(int i=0;i<4;i++){
+                getline(arquivo,linha);
+                };
+        }else{
+        arq_temp<<linha<<std::endl;
+        };
     };
 
-    if(flag){
-        std::cout<<"Jogador "<<apelido<<" removido com sucesso"<<std::endl;
-    }else{
-        std::cout<<"ERRO: jogador inexistente";
+    if(!encontrado){
+        std::cout<<"ERRO: Jogador inexistente"<<std::endl;
+        return;
+    };
+
+    arquivo.close();
+    arq_temp.close();
+
+    if(remove(arq_nome.c_str())!=0){
+        std::cout<<"Erro ao remover o antigo arquivo de jogadores!"<<std::endl;
+        return;
+    }
+    if(rename(temp_nome.c_str(),arq_nome.c_str())!=0){
+        std::cout<<"Erro ao renomear o arquivo temporário!"<<std::endl;
+        return;
     };
 
 };
 
-void listarJogadores(std::vector<Jogador *> Jogadores){
-    std::sort(Jogadores.begin(),Jogadores.end());
+void listarJogadores(){
+    std::string apelido, linha, arq_nome="Jogadores.txt",temp_nome="Temporario.txt";
+    std::ifstream arquivo(arq_nome);
 
-    for(Jogador *j:Jogadores){
-        std::cout<<j->exibirApelido()<<" "<<j->exibirNome()<<std::endl;
-        j->exibirEstatisticas();
-    }
+    if(!arquivo.is_open()){
+        std::cout<<"Erro ao abrir o arquivo para impressão."<<std::endl;
+        return;
+    };
+
+    bool vazio=true;
+
+    while(getline(arquivo,linha)){
+        vazio=false;
+        std::cout<<linha<<std::endl;
+    };
+
+    if(vazio){
+        std::cout<<"Não há jogadores cadastrados";
+    };
+
+    arquivo.close();
 };
