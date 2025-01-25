@@ -3,44 +3,36 @@
 
 const int TAM_LINHAS = 6, TAM_COL = 7;
 
-Lig4::Lig4()
-{
+Lig4::Lig4(){
     this->dimensionarTabuleiro(6, 7);
-}
+};
 
-void Lig4::validarJogada(int nulo, int coluna, int turno)
-{
-    int flag = 0;
+void Lig4::validarJogada(int nulo, int coluna, int turno){
+    int flag=0;
     coluna--;
-    for (int i = (TAM_LINHAS - 1); i >= 0; i--)
-    {
-        if (this->retornarPosicao(i, coluna) == '\0')
-        {
-            this->marcarTabuleiro(i, coluna, (turno == 0) ? 'X' : 'O');
-            flag = 1;
+    for (int i=(TAM_LINHAS-1);i>=0;i--){
+        if (this->retornarPosicao(i,coluna)=='\0'){
+            this->marcarTabuleiro(i,coluna,(turno==0)? 'X':'O');
+            flag=1;
             break;
         };
     };
-    if (!flag)
-    {
-        std::cout << "ERRO: jogada inválida";
+    if(!flag){
+        std::cout<<"ERRO: jogada inválida";
     };
 };
 
-void Lig4::imprimirTabuleiro()
-{
-    for (int i = 0; i < TAM_LINHAS; i++)
-    {
-        std::cout << "|";
-        for (int j = 0; j < TAM_COL; j++)
-        {
-            std::cout << this->retornarPosicao(i, j) << "|";
+void Lig4::imprimirTabuleiro(){
+    for (int i=0;i<TAM_LINHAS;i++){
+        std::cout<<"|";
+        for(int j=0;j<TAM_COL;j++){
+            std::cout << this->retornarPosicao(i, j)<<"|";
         };
-        std::cout << std::endl;
+        std::cout<<std::endl;
     };
 };
 
-int verificarVitoria(char marcacao)
+int Lig4::verificarVitoria(char marcacao)
 {
     int flag = 0;
     int i, j;
@@ -83,30 +75,75 @@ int verificarVitoria(char marcacao)
             };
         };
     };
-}
 
-/*
-Verifica se o meio corresponde:
-    se sim:
-        verifica se meio + 1, meio+2 e meio são iguais:
-            se sim:
-                verifica se
+    // Verifica a diagonal da esquerda pra direita subindo:
+    i = 1, j = 0;
+    while (i < TAM_COL - 3 && j <= TAM_LINHAS - i)
+    {
+        if (this->retornarPosicao(i, j) == marcacao)
+        {
+            flag++;
+            if (flag == 4)
+            {
+                return 1;
+            };
+        }
+        else
+        {
+            flag = 0;
+        };
+        i++, j++;
+    }
 
+    // Verifica a diagonal da esquerda pra direita subindo:
+    i = TAM_COL - 2, j = 0;
+    while (i > TAM_COL - 5 && j <= TAM_LINHAS - i)
+    {
+        if (this->retornarPosicao(i, j) == marcacao)
+        {
+            flag++;
+            if (flag == 4)
+            {
+                return 1;
+            };
+        }
+        else
+        {
+            flag = 0;
+        };
+        i--, j++;
+    }
 
-verifica se o meio corresponde:
-    se sim:
-        verifica se meio + 2 corresponde:
-            se sim:
-                verifica se meio+1 e meio+3 corespondem:
-                    se sim:
-                        retorna vitória
-                    se não:
-                        retorna 0
-            se não:
-                retona 0
-    se não:
-        retorna 0
+    // Verifica a diagonal da esquerda pra direita descendo:
+    i = 1, j = TAM_LINHAS - 1;
+    while (i < TAM_COL && j > i - 1)
+    {
+        if (this->retornarPosicao(i, j) == marcacao)
+        {
+            flag++;
+            if (flag == 4)
+            {
+                return 1;
+            };
+        }
+        else
+        {
+            flag = 0;
+        };
+        i++, j--;
+    }
 
-
-
-*/
+    // Verifica a diagonal da direita pra esquerda descendo:
+    i = TAM_COL - 2, j = TAM_LINHAS - 1;
+    while (i>TAM_COL-5 && j > (TAM_LINHAS - 1) - i){
+        if(this->retornarPosicao(i,j)==marcacao){
+            flag++;
+            if (flag == 4){
+                return 1;
+            };
+        }else{
+            flag=0;
+        };
+        i--, j--;
+    };
+};
