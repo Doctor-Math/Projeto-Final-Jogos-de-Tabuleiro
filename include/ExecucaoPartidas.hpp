@@ -11,7 +11,7 @@
 #include <sstream>
 #include <string>
 
-void escreverJogo(std::ofstream &arq_temp, int i, int vitorias, int derrotas) {
+void escreverJogo(std::ofstream &arq_temp, int i, int vitorias, int derrotas){
     if(i==0){
         arq_temp<<"REVERSI - V: "<<vitorias<<" D: "<<derrotas<<std::endl;
     }else if(i==1){
@@ -21,7 +21,7 @@ void escreverJogo(std::ofstream &arq_temp, int i, int vitorias, int derrotas) {
     };
 };
 
-void pontuarJogadores(std::string vencedor, std::string perdedor, int linha_modificar) {
+void pontuarJogadores(std::string vencedor, std::string perdedor, int linha_modificar){
     std::string arq_nome="Jogadores.txt",temp_nome="Temporario.txt";
     std::ifstream arquivo(arq_nome);
     std::ofstream arq_temp(temp_nome);
@@ -69,16 +69,16 @@ void pontuarJogadores(std::string vencedor, std::string perdedor, int linha_modi
     while(getline(arquivo,linha)){
         arq_temp<<linha<<std::endl;
         if(linha.rfind(vencedor, 0)==0){ // Atualiza o vencedor
-            for (int i=0;i<3;i++) {
+            for (int i=0;i<3;i++){
                 getline(arquivo,linha);
                 if (i==linha_modificar){
                     escreverJogo(arq_temp,i,vitoria_vencedor,derrota_vencedor);
                 }else{
-                    arq_temp << linha << std::endl;
+                    arq_temp<<linha<<std::endl;
                 };
             };
-        } else if (linha.rfind(perdedor,0)==0) { // Atualiza o perdedor
-            for(int i=0;i<3;i++) {
+        }else if(linha.rfind(perdedor,0)==0){ // Atualiza o perdedor
+            for(int i=0;i<3;i++){
                 getline(arquivo,linha);
                 if(i==linha_modificar){
                     escreverJogo(arq_temp,i,vitoria_perdedor,derrota_perdedor);
@@ -93,11 +93,11 @@ void pontuarJogadores(std::string vencedor, std::string perdedor, int linha_modi
     arq_temp.close();
 
     // Substitui o arquivo antigo pelo novo
-    if (remove(arq_nome.c_str())!=0) {
+    if(remove(arq_nome.c_str())!=0) {
         std::cout << "Erro ao remover o antigo arquivo de jogadores!" << std::endl;
         return;
     };
-    if (rename(temp_nome.c_str(), arq_nome.c_str())!=0) {
+    if(rename(temp_nome.c_str(),arq_nome.c_str())!=0) {
         std::cout << "Erro ao renomear o arquivo temporário!" << std::endl;
         return;
     };
@@ -105,7 +105,7 @@ void pontuarJogadores(std::string vencedor, std::string perdedor, int linha_modi
 
 void partidaVelha(std::string apelidoJ1, std::string apelidoJ2, JogoDaVelha* &tabuleiro){
     int turno=0, vitoria=0, linha,coluna;
-    while(vitoria==0){
+    while(!vitoria){
     if(turno==0){
         std::cout<<"Turno do jogador "<<apelidoJ1<<":"<<std::endl;
 
@@ -122,7 +122,6 @@ void partidaVelha(std::string apelidoJ1, std::string apelidoJ2, JogoDaVelha* &ta
         vitoria=tabuleiro->verificarVitoria('X');
         if(vitoria){
             pontuarJogadores(apelidoJ1,apelidoJ2,2);
-            break;
         };
         turno++;
     }else if(turno==1){
@@ -140,7 +139,7 @@ void partidaVelha(std::string apelidoJ1, std::string apelidoJ2, JogoDaVelha* &ta
         tabuleiro->imprimirTabuleiro();
         vitoria=tabuleiro->verificarVitoria('O');
         if(vitoria){
-            break;
+            pontuarJogadores(apelidoJ2,apelidoJ1,2);
         };
         turno--;
     };
@@ -151,7 +150,7 @@ void partidaVelha(std::string apelidoJ1, std::string apelidoJ2, JogoDaVelha* &ta
 
 void partidaLig4(std::string apelidoJ1, std::string apelidoJ2,Lig4* &tabuleiro){
     int turno=0, vitoria = 0, coluna;
-    while(vitoria==0){
+    while(!vitoria){
       if(turno==0){
         std::cout<<"Turno do jogador "<<apelidoJ1<<":"<<std::endl;
 
@@ -163,7 +162,7 @@ void partidaLig4(std::string apelidoJ1, std::string apelidoJ2,Lig4* &tabuleiro){
         tabuleiro->imprimirTabuleiro();
         vitoria=tabuleiro->verificarVitoria('X');
         if(vitoria){
-            break;
+            pontuarJogadores(apelidoJ1,apelidoJ2,1);
         };
         turno++;
     }else if(turno==1){
@@ -177,7 +176,7 @@ void partidaLig4(std::string apelidoJ1, std::string apelidoJ2,Lig4* &tabuleiro){
         tabuleiro->imprimirTabuleiro();
         vitoria=tabuleiro->verificarVitoria('O');
         if(vitoria){
-            break;
+            pontuarJogadores(apelidoJ2,apelidoJ1,1);
         };
         turno--;
     };
@@ -196,7 +195,7 @@ void executarPartida(char tipoJogo,std::string apelidoJ1,std::string apelidoJ2){
         {
             Reversi* tabuleiro=new Reversi();
         
-            partidaReversi(apelidoJ1, apelidoJ2, tabuleiro);
+            partidaReversi(apelidoJ1,apelidoJ2,tabuleiro);
         
             delete tabuleiro;
         
@@ -207,7 +206,7 @@ void executarPartida(char tipoJogo,std::string apelidoJ1,std::string apelidoJ2){
         {
             Lig4* tabuleiro=new Lig4();
         
-            partidaLig4(apelidoJ1, apelidoJ2, tabuleiro);
+            partidaLig4(apelidoJ1,apelidoJ2,tabuleiro);
         
             delete tabuleiro;
         };
@@ -223,6 +222,6 @@ void executarPartida(char tipoJogo,std::string apelidoJ1,std::string apelidoJ2){
         };
         break;
         default:
-        std::cout<<"ERRO: dados incorretos"<<std::endl;
+        std::cout<<"ERRO: Tipo de jogo não disponível"<<std::endl;
     };
 };

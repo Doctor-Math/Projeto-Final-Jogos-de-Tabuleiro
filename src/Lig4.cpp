@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Lig4.hpp"
 
-const int TAM_LINHAS = 6, TAM_COL = 7;
+const int TAM_LINHAS=6, TAM_COL=7;
 
 Lig4::Lig4(){
     this->dimensionarTabuleiro(6, 7);
@@ -34,111 +34,84 @@ void Lig4::imprimirTabuleiro(){
 
 int Lig4::verificarVitoria(char marcacao)
 {
-    int flag = 0;
-    int i, j;
+    int flag=0;
+    int i,j;
     // Verifica as linhas:
-    for (i = 0; i++; i < TAM_LINHAS)
-    {
-        for (j = 0; j++; j < TAM_COL)
-        {
-            if (this->retornarPosicao(i, j) == marcacao)
-            {
+    for (i=0;i++;i<TAM_LINHAS){
+        for (j=0;j++;j<TAM_COL){
+            if (this->retornarPosicao(i,j)==marcacao){
                 flag++;
-                if (flag == 4)
-                {
+                if(flag==4){
                     return 1;
                 };
-            }
-            else
-            {
-                flag = 0;
+            }else{
+                flag=0;
             };
         };
     };
 
     // Verifica as colunas:
-    for (j = 0; j++; j < TAM_COL)
-    {
-        for (i = 0; i++; i < TAM_LINHAS)
-        {
-            if (this->retornarPosicao(i, j) == marcacao)
-            {
+    for (j=0;j++;j<TAM_COL){
+        for (i=0;i++;i<TAM_LINHAS){
+            if (this->retornarPosicao(i,j)==marcacao){
                 flag++;
-                if (flag == 4)
-                {
+                if (flag == 4){
                     return 1;
                 };
-            }
-            else
-            {
-                flag = 0;
+            }else{
+                flag=0;
             };
         };
     };
 
     // Verifica a diagonal da esquerda pra direita subindo:
-    i = 1, j = 0;
-    while (i < TAM_COL - 3 && j <= TAM_LINHAS - i)
-    {
-        if (this->retornarPosicao(i, j) == marcacao)
-        {
+    i=1, j=0;
+    while (i<TAM_COL-3 && j<=TAM_LINHAS-i){
+        if (this->retornarPosicao(i,j)==marcacao){
             flag++;
-            if (flag == 4)
-            {
+            if (flag==4){
                 return 1;
             };
-        }
-        else
-        {
-            flag = 0;
+        }else{
+            flag=0;
         };
         i++, j++;
-    }
+    };
 
     // Verifica a diagonal da esquerda pra direita subindo:
-    i = TAM_COL - 2, j = 0;
-    while (i > TAM_COL - 5 && j <= TAM_LINHAS - i)
-    {
-        if (this->retornarPosicao(i, j) == marcacao)
-        {
+    i=TAM_COL-2, j=0;
+    while (i>TAM_COL-5 && j<=TAM_LINHAS-i){
+        if (this->retornarPosicao(i,j)==marcacao){
             flag++;
-            if (flag == 4)
-            {
+            if (flag==4){
                 return 1;
             };
-        }
-        else
-        {
-            flag = 0;
+        }else{
+            flag=0;
         };
         i--, j++;
-    }
+    };
 
     // Verifica a diagonal da esquerda pra direita descendo:
-    i = 1, j = TAM_LINHAS - 1;
-    while (i < TAM_COL && j > i - 1)
-    {
-        if (this->retornarPosicao(i, j) == marcacao)
-        {
+    i=1, j=TAM_LINHAS-1;
+    while (i<TAM_COL && j>i-1){
+        if (this->retornarPosicao(i, j)==marcacao){
             flag++;
-            if (flag == 4)
-            {
+            if(flag==4){
                 return 1;
             };
-        }
-        else
-        {
-            flag = 0;
+        }else{
+            flag=0;
         };
         i++, j--;
-    }
+    };
 
     // Verifica a diagonal da direita pra esquerda descendo:
-    i = TAM_COL - 2, j = TAM_LINHAS - 1;
-    while (i>TAM_COL-5 && j > (TAM_LINHAS - 1) - i){
+    i=TAM_COL-2, j=TAM_LINHAS-1;
+    while(i>TAM_COL-5 && j>(TAM_LINHAS-1)-i){
         if(this->retornarPosicao(i,j)==marcacao){
             flag++;
-            if (flag == 4){
+            if(flag==4){
                 return 1;
             };
         }else{

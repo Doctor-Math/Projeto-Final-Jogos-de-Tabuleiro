@@ -109,10 +109,10 @@ void listarJogadores(){
         return;
     };
 
-    bool vazio=true;
+    int vazio=1;
 
     while(getline(arquivo,linha)){
-        vazio=false;
+        vazio=0;
         std::cout<<linha<<std::endl;
     };
 
@@ -121,4 +121,36 @@ void listarJogadores(){
     };
 
     arquivo.close();
+};
+
+int verificarCadastro(std::string apelidoJ1, std::string apelidoJ2){
+    int encontradoJ1=0, encontradoJ2=0;
+    std::string arq_nome="Jogadores.txt", linha;
+    std::ifstream arquivo(arq_nome);
+
+    if(!arquivo.is_open()){
+        std::cout<<"Erro ao abrir o arquivo para verificação de existência de jogadores."<<std::endl;
+        return;
+    };
+
+    int contador=0;
+
+    while(getline(arquivo,linha)){
+        if(contador%4==0){
+            if(linha.rfind(apelidoJ1,0)==0){
+                encontradoJ1=1;
+            }else if(linha.rfind(apelidoJ2,0)==0){
+                encontradoJ2=1;
+            };
+        };
+        contador++;
+    };
+
+    arquivo.close();
+
+    if(encontradoJ1 && encontradoJ2){
+        return 1;
+    }else{
+        return 0;
+    };
 };

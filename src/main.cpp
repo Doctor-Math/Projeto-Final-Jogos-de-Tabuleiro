@@ -35,7 +35,15 @@ int main(){
             std::cout<<"Apelido do jogador 2:";
             std::cin>>apelidoJ2;
 
-            executarPartida(tipoJogo,apelidoJ1,apelidoJ2);
+            int verificado=0;
+
+            verificado=verificarCadastro(apelidoJ1,apelidoJ2);
+
+            if(verificado){
+                executarPartida(tipoJogo,apelidoJ1,apelidoJ2);
+            }else{
+                std::cout<<"ERRO: Jogador(es) inexistente(s)"<<std::endl;
+            };
             
         }else if(resp!="FS"){
             std::cout<<"Comando inválido"<<std::endl;
