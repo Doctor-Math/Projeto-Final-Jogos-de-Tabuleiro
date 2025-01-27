@@ -94,3 +94,7 @@ int JogoDaVelha::verificarVitoria(char marcacao){
 
     return flag;
 };
+
+JogoDaVelha::~JogoDaVelha(){
+    std::cout<<"Encerrando o jogo..."<<std::endl;
+};

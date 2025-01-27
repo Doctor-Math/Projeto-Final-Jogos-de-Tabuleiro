@@ -7,6 +7,12 @@ Reversi::Reversi(){
     this->dimensionarTabuleiro(8,8);
 }
 
+void Reversi::validarJogada(int linha, int coluna, int turno){   
+};
+
+int Reversi::verificarVitoria(char marcacao){
+};
+
 void Reversi::imprimirTabuleiro(){
     for(int i=0;i<TAM_LINHAS;i++){
         std::cout<<"|";
@@ -15,4 +21,8 @@ void Reversi::imprimirTabuleiro(){
         };
         std::cout<<std::endl;
     };
+};
+
+Reversi::~Reversi(){
+    std::cout<<"Encerrando o jogo..."<<std::endl;
 };

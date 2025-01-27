@@ -4,20 +4,20 @@
 const int TAM_LINHAS=6, TAM_COL=7;
 
 Lig4::Lig4(){
-    this->dimensionarTabuleiro(6, 7);
+    this->dimensionarTabuleiro(TAM_LINHAS, TAM_COL);
 };
 
 void Lig4::validarJogada(int nulo, int coluna, int turno){
-    int flag=0;
+    int valido=0;
     coluna--;
     for (int i=(TAM_LINHAS-1);i>=0;i--){
         if (this->retornarPosicao(i,coluna)=='\0'){
             this->marcarTabuleiro(i,coluna,(turno==0)? 'X':'O');
-            flag=1;
+            valido=1;
             break;
         };
     };
-    if(!flag){
+    if(!valido){
         std::cout<<"ERRO: jogada inválida";
     };
 };
@@ -37,8 +37,8 @@ int Lig4::verificarVitoria(char marcacao)
     int flag=0;
     int i,j;
     // Verifica as linhas:
-    for (i=0;i++;i<TAM_LINHAS){
-        for (j=0;j++;j<TAM_COL){
+    for (i=0;i<TAM_LINHAS;i++){
+        for (j=0;j<TAM_COL;j++){
             if (this->retornarPosicao(i,j)==marcacao){
                 flag++;
                 if(flag==4){
@@ -51,8 +51,8 @@ int Lig4::verificarVitoria(char marcacao)
     };
 
     // Verifica as colunas:
-    for (j=0;j++;j<TAM_COL){
-        for (i=0;i++;i<TAM_LINHAS){
+    for (j=0;j<TAM_COL;j++){
+        for (i=0;i<TAM_LINHAS;i++){
             if (this->retornarPosicao(i,j)==marcacao){
                 flag++;
                 if (flag == 4){
@@ -119,4 +119,10 @@ int Lig4::verificarVitoria(char marcacao)
         };
         i--, j--;
     };
+
+    return flag;
+};
+
+Lig4::~Lig4(){
+    std::cout<<"Encerrando o jogo..."<<std::endl;
 };

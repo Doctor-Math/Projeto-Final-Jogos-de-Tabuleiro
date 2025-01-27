@@ -1,3 +1,6 @@
+#ifndef REVERSI_HPP
+#define REVERSI_HPP
+
 #include <iostream>
 #include <vector>
 #include "JogoTabuleiro.hpp"
@@ -11,3 +14,5 @@ class Reversi: public JogoTabuleiro{
     void imprimirTabuleiro() override;
     ~Reversi();
 };
+
+#endif

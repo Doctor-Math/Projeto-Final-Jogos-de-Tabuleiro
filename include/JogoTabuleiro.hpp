@@ -1,3 +1,6 @@
+#ifndef JOGOTABULEIRO_HPP
+#define JOGOTABULEIRO_HPP
+
 #include <iostream>
 #include <vector>
 
@@ -13,6 +16,8 @@ class JogoTabuleiro{
     virtual void validarJogada(int,int, int)=0;
     virtual int verificarVitoria(char)=0;
     virtual void imprimirTabuleiro()=0;
-    ~JogoTabuleiro();
+    virtual ~JogoTabuleiro();
 
 };
+
+#endif

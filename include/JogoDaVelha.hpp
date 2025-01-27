@@ -1,3 +1,6 @@
+#ifndef JOGODAVELHA_HPP
+#define JOGODAVELHA_HPP
+
 #include <iostream>
 #include <vector>
 #include "JogoTabuleiro.hpp"
@@ -11,3 +14,5 @@ class JogoDaVelha: public JogoTabuleiro{
     void imprimirTabuleiro() override;
     ~JogoDaVelha();
 };
+
+#endif
