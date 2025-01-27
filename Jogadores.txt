@@ -1,0 +1,10 @@
+RenatoValis Renato
+REVERSI - V: 0 D: 0
+LIG4 - V: 0 D: 1
+VELHA - V: 0 D: 1
+--------------------
+DoctorMath Matheus
+REVERSI - V: 0 D: 0
+LIG4 - V: 1 D: 0
+VELHA - V: 1 D: 0
+--------------------

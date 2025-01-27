@@ -10,7 +10,7 @@ void cadastrarJogador(){
     std::fstream arquivo(arq_nome,std::ios::in);
 
     if(!arquivo){
-        std::cout<<"ERRO: Arquivo não encontrado!";
+        std::cout<<"ERRO: Arquivo não encontrado!"<<std::endl;
         return;
     };
     
@@ -24,7 +24,7 @@ void cadastrarJogador(){
     int contador=0;
 
     while(std::getline(arquivo,linha)){
-        if(contador%4==0){
+        if(contador%5==0){
             if(linha.rfind(apelido,0)==0){
                 std::cout<<"Erro: jogador repetido"<<std::endl;
                 return;
@@ -118,7 +118,7 @@ void listarJogadores(){
     };
 
     if(vazio){
-        std::cout<<"Não há jogadores cadastrados";
+        std::cout<<"Não há jogadores cadastrados"<<std::endl;
     };
 
     arquivo.close();
@@ -137,7 +137,7 @@ int verificarCadastro(std::string apelidoJ1, std::string apelidoJ2){
     int contador=0;
 
     while(getline(arquivo,linha)){
-        if(contador%4==0){
+        if(contador%5==0){
             if(linha.rfind(apelidoJ1,0)==0){
                 encontradoJ1=1;
             }else if(linha.rfind(apelidoJ2,0)==0){

@@ -87,90 +87,91 @@ void pontuarJogadores(std::string vencedor, std::string perdedor, int linha_modi
 
     // Substitui o arquivo antigo pelo novo
     if(remove(arq_nome.c_str())!=0) {
-        std::cout << "Erro ao remover o antigo arquivo de jogadores!" << std::endl;
+        std::cout<<"Erro ao remover o antigo arquivo de jogadores!"<<std::endl;
         return;
     };
     if(rename(temp_nome.c_str(),arq_nome.c_str())!=0) {
-        std::cout << "Erro ao renomear o arquivo temporário!" << std::endl;
+        std::cout<<"Erro ao renomear o arquivo temporário!"<<std::endl;
         return;
     };
 };
 
-void partidaVelha(std::string apelidoJ1, std::string apelidoJ2, JogoDaVelha* &tabuleiro){
-    int turno=0, vitoria=0, linha,coluna;
-    while(!vitoria){
-    if(turno==0){
-        std::cout<<"Turno do jogador "<<apelidoJ1<<":"<<std::endl;
+void rodadaVelha(int turno, int &vitoria, std::string apelido1, std::string apelido2, JogoDaVelha* &tabuleiro){
+    int linha, coluna;
+    std::cout<<"Turno do jogador "<<apelido1<<":"<<std::endl;
 
+        try{
         std::cout<<"Linha:";
         std::cin>>linha;
         std::cout<<""<<std::endl;
-
         std::cout<<"Coluna:";
         std::cin>>coluna;
         std::cout<<""<<std::endl;
-
         tabuleiro->validarJogada(linha,coluna,turno);
+        }
+
+        catch(const std::out_of_range& e){ // Captura exceção de linha/coluna fora dos limites do tabuleiro
+        std::cout<<"Erro: "<<e.what()<<std::endl; // Exibe a mensagem de erro
+        }
+
         tabuleiro->imprimirTabuleiro();
         vitoria=tabuleiro->verificarVitoria('X');
         if(vitoria){
-            pontuarJogadores(apelidoJ1,apelidoJ2,2);
+            std::cout<<"Vitória de "<<apelido1<<"!"<<std::endl;
+            pontuarJogadores(apelido1,apelido2,2);
         };
-        turno++;
-    }else if(turno==1){
-        std::cout<<"Turno do jogador "<<apelidoJ2<<":"<<std::endl;
-
-        std::cout<<"Linha:";
-        std::cin>>linha;
-        std::cout<<""<<std::endl;
-
-        std::cout<<"Coluna:";
-        std::cin>>coluna;
-        std::cout<<""<<std::endl;
-
-        tabuleiro->validarJogada(linha,coluna,turno);
-        tabuleiro->imprimirTabuleiro();
-        vitoria=tabuleiro->verificarVitoria('O');
-        if(vitoria){
-            pontuarJogadores(apelidoJ2,apelidoJ1,2);
-        };
-        turno--;
-    };
-    };
 };
 
 
+void partidaVelha(std::string apelidoJ1, std::string apelidoJ2, JogoDaVelha* &tabuleiro){
+    int turno=0, vitoria=0, empate=0, linha,coluna;
+    while(!vitoria && !empate){
+        if(turno==0){
+            rodadaVelha(turno,vitoria,apelidoJ1,apelidoJ2,tabuleiro);
+            turno++;
+        }else if(turno==1){
+            rodadaVelha(turno,vitoria,apelidoJ2,apelidoJ1,tabuleiro);
+            turno--;
+        };
 
-void partidaLig4(std::string apelidoJ1, std::string apelidoJ2,Lig4* &tabuleiro){
-    int turno=0, vitoria = 0, coluna;
-    while(!vitoria){
-      if(turno==0){
-        std::cout<<"Turno do jogador "<<apelidoJ1<<":"<<std::endl;
+    };
+};
+
+void rodadaLig4(int turno, int &vitoria, std::string apelido1, std::string apelido2, Lig4* &tabuleiro){
+    int linha, coluna;
+
+    std::cout<<"Turno do jogador "<<apelido1<<":"<<std::endl;
 
         std::cout<<"Coluna:";
         std::cin>>coluna;
         std::cout<<""<<std::endl;
 
-        tabuleiro->validarJogada(0,coluna,turno);
+        
+        try{
+            tabuleiro->validarJogada(0,coluna,turno);
+        }
+
+        catch(const std::out_of_range& e){
+            std::cout<<"Erro: "<<e.what()<<std::endl; 
+        }
+
         tabuleiro->imprimirTabuleiro();
         vitoria=tabuleiro->verificarVitoria('X');
         if(vitoria){
-            pontuarJogadores(apelidoJ1,apelidoJ2,1);
+            std::cout<<"Vitória de "<<apelido1<<"!"<<std::endl;
+            pontuarJogadores(apelido1,apelido2,1);
         };
+};
+
+
+void partidaLig4(std::string apelidoJ1, std::string apelidoJ2,Lig4* &tabuleiro){
+    int turno=0, vitoria=0, empate=0, coluna;
+    while(!vitoria && !empate){
+      if(turno==0){
+        rodadaLig4(turno,vitoria,apelidoJ1,apelidoJ2,tabuleiro);
         turno++;
     }else if(turno==1){
-        std::cout<<"Turno do jogador "<<apelidoJ2<<":"<<std::endl;
-
-        std::cout<<"Coluna:";
-        std::cin>>coluna;
-        std::cout<<""<<std::endl;
-
-        tabuleiro->validarJogada(0,coluna,turno);
-        tabuleiro->imprimirTabuleiro();
-        vitoria=tabuleiro->verificarVitoria('O');
-        if(vitoria){
-            pontuarJogadores(apelidoJ2,apelidoJ1,1);
-        };
+        rodadaLig4(turno,vitoria,apelidoJ2,apelidoJ1,tabuleiro);
         turno--;
     };
     };
@@ -178,7 +179,10 @@ void partidaLig4(std::string apelidoJ1, std::string apelidoJ2,Lig4* &tabuleiro){
 };
 
 void partidaReversi(std::string apelidoJ1, std::string apelidoJ2,Reversi* &tabuleiro){
-    int turno=1;
+    int turno=0, vitoria=0, empate=0;
+    while(!vitoria && !empate){
+
+    };
 };
 
 void executarPartida(char tipoJogo,std::string apelidoJ1,std::string apelidoJ2){

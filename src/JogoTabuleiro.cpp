@@ -17,7 +17,7 @@ void JogoTabuleiro::marcarTabuleiro(int linha, int coluna, char marcacao){
 };
 
 char JogoTabuleiro::retornarPosicao(int linha, int coluna){
-    return this->tabuleiro[linha][coluna];
+        return this->tabuleiro[linha][coluna];
 };
 
 JogoTabuleiro::~JogoTabuleiro(){

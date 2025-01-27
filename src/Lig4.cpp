@@ -26,7 +26,11 @@ void Lig4::imprimirTabuleiro(){
     for (int i=0;i<TAM_LINHAS;i++){
         std::cout<<"|";
         for(int j=0;j<TAM_COL;j++){
+            if(this->retornarPosicao(i,j)=='\0'){
+                std::cout<<" "<<"|";
+            }else{
             std::cout << this->retornarPosicao(i, j)<<"|";
+            };
         };
         std::cout<<std::endl;
     };

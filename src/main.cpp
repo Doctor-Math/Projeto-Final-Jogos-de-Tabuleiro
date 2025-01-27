@@ -5,7 +5,6 @@
 int main(){
     std::string resp=" ", apelidoJ1, apelidoJ2;
     char tipoJogo;
-    
     std::cout<<"---------Jogos-de-tabuleiro--------"<<std::endl;
     
     std::cout<<"Comandos:"<<std::endl;
