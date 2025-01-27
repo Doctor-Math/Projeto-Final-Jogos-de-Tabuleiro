@@ -1,2 +1,2 @@
-![Capa do trabalho](https://imgur.com/a/GuKwUn9)
+[Imgur](https://imgur.com/qWphmv2)
 <h1 align="center"> Projeto Final - Jogos de Tabuleiro </h1>
