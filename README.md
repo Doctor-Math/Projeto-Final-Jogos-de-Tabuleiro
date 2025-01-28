@@ -1,6 +1,4 @@
-<h1 align="center">                                                    Projeto Final - Jogos de Tabuleiro X|O|X
-                                   X|O|X 
-                                   X|O|X </h1>
+<h1 align="center">                                                    Projeto Final - Jogos de Tabuleiro ♟ </h1>
 
 **Aplicar os conceitos de PDS2 em um programa funcional que reflete nosso aprendizado durante as aulas**
 
@@ -10,15 +8,16 @@
 
 Neste projeto, vamos aplicar técnicas aprendidas em sala de aula com o objetivo de criar um programa que reproduz o funcionamento de vários jogos tabuleiro, sendo eles Jogo da Velha, Lig4 e Reversi. Neste programa foram aplicados conceitos de Modularização, Classes, Programação Orientada a Objetos (POO), entre outros. Para realizar o projeto utilizamos das ferramentas do GitHub, VScode, Doxygen e Docteste. Tal programa foi feito com a finalidade para que possamos simular um ambiente de programação em equipe e também nos ambientarmos com as novas técnicas aprendidas.
 
-# Projeto
+# Projeto 🏆
 
-**Modularização**
+
+**Modularização 🐉**
 
 O programa é dividido em módulos para que ele seja melhor organizado fácilitando a entende-lo e também para ajudar o trabalho em equipe para que vários participantes possam programas em diferentes módulos ao mesmo tempo. 
 
 A modularização foi dividida em pastas. Os arquivos hpp, que estão na pasta include, Definem as classes e funções utilizadas no projeto. Já os arquivos com as implementações, os cpp, estão na pasta src, eles definem as classes e funções utilizadas no projeto para serem utilizadas no arquivo main. Além deles temos o arquivo principal(main) e o Makefile, o primeiro deles é responsável por executar o programa e o segundo é encarregado de compilar o projeto automaticamente.
 
-***CLASSES***
+***CLASSES🥋***
 
 **🟣Classe Abstrata**: JogoTabuleiro 
 
