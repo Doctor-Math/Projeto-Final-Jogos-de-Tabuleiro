@@ -1,4 +1,4 @@
-<h1 align="center">                                    X|X|O
+<h1 align="center">                                                       X|X|O
                     Projeto Final - Jogos de Tabuleiro O|O|X
                                                        O|X|X          </h1>
 
