@@ -124,8 +124,8 @@ void rodadaVelha(int turno, int &vitoria, std::string apelido1, std::string apel
 
 
 void partidaVelha(std::string apelidoJ1, std::string apelidoJ2, JogoDaVelha* &tabuleiro){
-    int turno=0, vitoria=0, empate=0, linha,coluna;
-    while(!vitoria && !empate){
+    int turno=0, vitoria=0,linha,coluna;
+    while(!vitoria){
         if(turno==0){
             rodadaVelha(turno,vitoria,apelidoJ1,apelidoJ2,tabuleiro);
             turno++;
@@ -165,8 +165,8 @@ void rodadaLig4(int turno, int &vitoria, std::string apelido1, std::string apeli
 
 
 void partidaLig4(std::string apelidoJ1, std::string apelidoJ2,Lig4* &tabuleiro){
-    int turno=0, vitoria=0, empate=0, coluna;
-    while(!vitoria && !empate){
+    int turno=0, vitoria=0, coluna;
+    while(!vitoria){
       if(turno==0){
         rodadaLig4(turno,vitoria,apelidoJ1,apelidoJ2,tabuleiro);
         turno++;
@@ -178,10 +178,39 @@ void partidaLig4(std::string apelidoJ1, std::string apelidoJ2,Lig4* &tabuleiro){
 
 };
 
-void partidaReversi(std::string apelidoJ1, std::string apelidoJ2,Reversi* &tabuleiro){
-    int turno=0, vitoria=0, empate=0;
-    while(!vitoria && !empate){
+void rodadaReversi(int turno, int &vitoria, std::string apelido1, std::string apelido2, Reversi* &tabuleiro){
+    int linha, coluna, invalidade=0;
 
+    tabuleiro->imprimirTabuleiro();
+    int i=0;
+
+    std::cout << "Turno do jogador " << apelido1 << ":" << std::endl;
+
+        std::cout << "Linha:";
+        std::cin >> linha;
+        std::cout << "" << std::endl;
+        std::cout << "Coluna:";
+        std::cin >> coluna;
+        std::cout << "" << std::endl;
+
+        tabuleiro->validarJogada(linha,coluna,turno);
+        tabuleiro->imprimirTabuleiro();
+    
+
+};
+
+
+void partidaReversi(std::string apelidoJ1, std::string apelidoJ2,Reversi* &tabuleiro){
+    int turno=0, vitoria=0,i=0;
+    while(i<6){
+        if(turno==0){
+            rodadaReversi(turno,vitoria,apelidoJ1,apelidoJ2,tabuleiro);
+            turno++;
+        }else if(turno==1){
+            rodadaReversi(turno,vitoria,apelidoJ2,apelidoJ1,tabuleiro);
+            turno--;
+        };
+        i++;
     };
 };
 
