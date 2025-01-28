@@ -20,24 +20,38 @@ A modularização foi dividida em pastas. Os arquivos hpp, que estão na pasta i
 
 Classe Abstrata: JogoTabuleiro 
 Responsabilidades: 
+
 Fornecer a estrutura do tabuleiro; 
+
 Fornecer peças;
+
 Ler uma jogada; 
+
 Testar a validade da jogada; 
+
 Testar condições de vitória; 
+
 Imprimir tabuleiro.
 
-Colaboração:  
+Colaboração:
+
 Nenhuma.  
 
 
 Classe Herdeira: JogoDaVelha
+
 Responsabilidades:
+
 (Herdada de JogoTabuleiro) Fornecer a estrutura do tabuleiro; 
+
 (Herdada de JogoTabuleiro) Fornecer peças; 
+
 (Herdada de JogoTabuleiro) Ler uma jogada; 
+
 (Herdada de JogoTabuleiro) Sobrescreve o método validade() para testar a validade da jogada; 
+
 (Herdada de JogoTabuleiro) Sobrescreve o método condicoesVitoria() para testar as condições de vitória; 
+
 (Herdada de JogoTabuleiro) Sobrescreve o método imprime() para imprimir o tabuleiro. 
 
 Colaboração: JogoTabuleiro.
