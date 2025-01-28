@@ -1,8 +1,10 @@
-<h1 align="center"> Projeto Final - Jogos de Tabuleiro </h1>
+<h1 align="center">                                    X|X|O
+                    Projeto Final - Jogos de Tabuleiro O|O|X
+                                                       O|X|X          </h1>
 
 **Aplicar os conceitos de PDS2 em um programa funcional que reflete nosso aprendizado durante as aulas**
 
-- Participantes: Guilherme Bueno de Andrade Motta,  Gustavo Cabral Gonçalves, Matheus Soares e Renato Lucas
+- Participantes 🧑‍💻: Guilherme Bueno de Andrade Motta,  Gustavo Cabral Gonçalves, Matheus Soares e Renato Lucas
 
 **Introdução**
 
@@ -20,7 +22,7 @@ A modularização foi dividida em pastas. Os arquivos hpp, que estão na pasta i
 
 **🟣Classe Abstrata**: JogoTabuleiro 
 
-Responsabilidades: 
+🧐Responsabilidades: 
 
 Fornecer a estrutura do tabuleiro; 
 
@@ -34,14 +36,14 @@ Testar condições de vitória;
 
 Imprimir tabuleiro.
 
-Colaboração:
+🤝Colaboração:
 
 Nenhuma.  
 
 
-**🟣Classe Herdeira**: JogoDaVelha
+**🟠Classe Herdeira**: JogoDaVelha
 
-Responsabilidades:
+🧐Responsabilidades:
 
 (Herdada de JogoTabuleiro) Fornecer a estrutura do tabuleiro; 
 
@@ -55,12 +57,14 @@ Responsabilidades:
 
 (Herdada de JogoTabuleiro) Sobrescreve o método imprimirTabuleiro() para imprimir o tabuleiro. 
 
-Colaboração: JogoTabuleiro.
+🤝Colaboração: 
+
+JogoTabuleiro.
 
 
-**🟣Classe Herdeira**: Lig4
+**🟠Classe Herdeira**: Lig4
 
-Responsabilidades:
+🧐Responsabilidades:
 
 (Herdada de JogoTabuleiro) Fornecer a estrutura do tabuleiro; 
 
@@ -74,10 +78,14 @@ Responsabilidades:
 
 (Herdada de JogoTabuleiro) Sobrescreve o método imprimirTabuleiro() para imprimir o tabuleiro. 
 
-Colaboração: JogoTabuleiro.
+🤝Colaboração: 
+
+JogoTabuleiro.
 
 
-**🟣Classe Herdeira**: Reversi
+**🟠Classe Herdeira**: Reversi
+
+🧐Responsabilidades:
 
 (Herdado de JogoTabuleiro) Fornecer a estrutura do tabuleiro.
 
@@ -93,14 +101,18 @@ Colaboração: JogoTabuleiro.
 
 Novo método verificarDirecao(int, int, int, int, int): Método que verifica se há peças alinhadas em uma determinada direção (útil para capturar peças no Reversi).
 
+🤝Colaboração: 
 
-# Funcionamento Do Programa
+JogoTabuleiro.
+
+
+# Funcionamento Do Programa 🧑‍💻
 
 No início do programa o usuário pode se cadastrar escolhendo o seu nome e apelido, esses dados vão para um arquivo no qual o usuário pode cadastrar mais jogadores ou remover os já criados. Após o cadastro, o usuário escolhe qual jogo ele quer iniciar a depender das letras que ele digitar, por exemplo R -> Reversi, L ->Lig e V-> Jogo da Velha. Na execução das partidas o usuário deve entrar com os apelidos dos dois jogadores e o sistema mostrar uma partida do jogo selecionado, sendo ela interatica na qual os dois jogadores podem competir entre si. Durante a partida o sistema ele é capaz de checar se uma jogada é válida ou não, atualizar o jogo a cada jogada e testar uma possível vitória de um jogador. No final do jogo, o programa mostra o vencedor e no banco de dados que contém os nomes e apelidos dos jogadores ele atualiza as estatísticas dos indivíduos.
 
 
 
-# Dificuldades
+# Dificuldades 😮‍💨
 
  A criação desse algoritmo foi um processo ao mesmo tempo muito divertido, foi também
  custoso. A liberdade de poder criar um código da nossa maneira, poder usar todos
