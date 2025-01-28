@@ -125,3 +125,9 @@ No início do programa o usuário pode se cadastrar escolhendo o seu nome e apel
  melhor maneira possível.
 
  😡Nossas principais dificuldades foram:
+ 
+ - Conseguir fazer a verificação de vitórias no jogo Reversi e Lig4
+ - Se ambientar com o GitHub e suas funcionalidades
+ - Conseguir que o sistema conseguisse entender e marcar cada jogada
+ - Aprender o usar o doxygen
+ - Tentar entender a lógica geral do programa
