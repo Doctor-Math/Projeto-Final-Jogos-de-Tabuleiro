@@ -16,9 +16,9 @@ O programa é dividido em módulos para que ele seja melhor organizado fácilita
 
 A modularização foi dividida em pastas. Os arquivos hpp, que estão na pasta include, Definem as classes e funções utilizadas no projeto. Já os arquivos com as implementações, os cpp, estão na pasta src, eles definem as classes e funções utilizadas no projeto para serem utilizadas no arquivo main. Além deles temos o arquivo principal(main) e o Makefile, o primeiro deles é responsável por executar o programa e o segundo é encarregado de compilar o projeto automaticamente.
 
-***Classes e Funções***
+******Classes*********
 
-**Classe Abstrata**: JogoTabuleiro 
+**🟣Classe Abstrata**: JogoTabuleiro 
 
 Responsabilidades: 
 
@@ -39,7 +39,7 @@ Colaboração:
 Nenhuma.  
 
 
-**Classe Herdeira**: JogoDaVelha
+**🟣Classe Herdeira**: JogoDaVelha
 
 Responsabilidades:
 
