@@ -28,9 +28,6 @@ void Reversi::imprimirTabuleiro(){
     };
 };
 
-int Reversi::verificarVitoria(char nulo){
-};
-
 void Reversi::validarJogada(int linha, int coluna, int turno) {   
     linha--;
     coluna--;
@@ -90,6 +87,52 @@ bool Reversi::verificarDirecao(int linha, int coluna, int turno, int dLinha, int
 
     return jogadaValida;  // Retorna se a jogada foi válida
 }
+
+int Reversi::verificarVitoria(char nulo) {
+    int contX = 0; // Contador para as peças do jogador X
+    int contO = 0; // Contador para as peças do jogador O
+    bool jogadaPossivelX = false; // Verifica se X pode jogar
+    bool jogadaPossivelO = false; // Verifica se O pode jogar
+
+    for (int i = 0; i < TAM_LINHAS; i++) {
+        for (int j = 0; j < TAM_COL; j++) {
+            char pos = this->retornarPosicao(i, j);
+
+            // Conta as peças de cada jogador
+            if (pos == 'X') contX++;
+            else if (pos == 'O') contO++;
+
+            // Verifica se há jogadas possíveis para X e O
+            if (pos == nulo) {
+                if (!jogadaPossivelX && 
+                    (verificarDirecao(i, j, 0, -1, 0) || verificarDirecao(i, j, 0, 1, 0) ||
+                     verificarDirecao(i, j, 0, 0, -1) || verificarDirecao(i, j, 0, 0, 1) ||
+                     verificarDirecao(i, j, 0, -1, -1) || verificarDirecao(i, j, 0, -1, 1) ||
+                     verificarDirecao(i, j, 0, 1, -1) || verificarDirecao(i, j, 0, 1, 1))) {
+                    jogadaPossivelX = true;
+                }
+                if (!jogadaPossivelO &&
+                    (verificarDirecao(i, j, 1, -1, 0) || verificarDirecao(i, j, 1, 1, 0) ||
+                     verificarDirecao(i, j, 1, 0, -1) || verificarDirecao(i, j, 1, 0, 1) ||
+                     verificarDirecao(i, j, 1, -1, -1) || verificarDirecao(i, j, 1, -1, 1) ||
+                     verificarDirecao(i, j, 1, 1, -1) || verificarDirecao(i, j, 1, 1, 1))) {
+                    jogadaPossivelO = true;
+                }
+            }
+        }
+    }
+
+    // Se nenhum jogador pode jogar, o jogo termina
+    if (!jogadaPossivelX && !jogadaPossivelO) {
+        if (contX > contO) return 1; // X vence
+        else if (contO > contX) return 2; // O vence
+        else return 3; // Empate
+    }
+
+    // Jogo continua
+    return 0;
+}
+
 
 Reversi::~Reversi(){
     std::cout<<"Encerrando o jogo..."<<std::endl;

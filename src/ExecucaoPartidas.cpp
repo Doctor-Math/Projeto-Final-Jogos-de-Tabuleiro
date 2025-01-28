@@ -181,9 +181,6 @@ void partidaLig4(std::string apelidoJ1, std::string apelidoJ2,Lig4* &tabuleiro){
 void rodadaReversi(int turno, int &vitoria, std::string apelido1, std::string apelido2, Reversi* &tabuleiro){
     int linha, coluna, invalidade=0;
 
-    tabuleiro->imprimirTabuleiro();
-    int i=0;
-
     std::cout << "Turno do jogador " << apelido1 << ":" << std::endl;
 
         std::cout << "Linha:";
@@ -195,14 +192,19 @@ void rodadaReversi(int turno, int &vitoria, std::string apelido1, std::string ap
 
         tabuleiro->validarJogada(linha,coluna,turno);
         tabuleiro->imprimirTabuleiro();
-    
+
+        vitoria = tabuleiro->verificarVitoria('\0');
+        if (vitoria == 1) std::cout << "Jogador X venceu!" << std::endl;
+        else if (vitoria == 2) std::cout << "Jogador O venceu!" << std::endl;
+        else if (vitoria == 3) std::cout << "O jogo terminou empatado!" << std::endl;
+
 
 };
 
 
 void partidaReversi(std::string apelidoJ1, std::string apelidoJ2,Reversi* &tabuleiro){
     int turno=0, vitoria=0,i=0;
-    while(i<6){
+    while(!vitoria){
         if(turno==0){
             rodadaReversi(turno,vitoria,apelidoJ1,apelidoJ2,tabuleiro);
             turno++;
