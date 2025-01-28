@@ -1,9 +1,27 @@
+/**
+ * @file ExecucaoPartidas.cpp
+ * @brief Implementação das funções para execução das partidas e manipulação de resultados dos jogos.
+ * 
+ * Este arquivo contém as funções necessárias para gerenciar partidas de diferentes tipos de jogos,
+ * registrar resultados e atualizar os dados dos jogadores.
+ */
+
 #include <iostream>
 #include <fstream>
 #include <sstream>
 #include <string>
 #include "ExecucaoPartidas.hpp"
 
+
+
+/**
+ * @brief Escreve no arquivo temporário os dados de vitória e derrota de um jogador.
+ * 
+ * @param arq_temp Arquivo temporário onde os dados serão escritos.
+ * @param i Índice do tipo de jogo (0 = Reversi, 1 = Lig4, 2 = Jogo da Velha).
+ * @param vitorias Número de vitórias do jogador.
+ * @param derrotas Número de derrotas do jogador.
+ */
 void escreverJogo(std::ofstream &arq_temp, int i, int vitorias, int derrotas){
     if(i==0){
         arq_temp<<"REVERSI - V: "<<vitorias<<" D: "<<derrotas<<std::endl;
@@ -14,6 +32,14 @@ void escreverJogo(std::ofstream &arq_temp, int i, int vitorias, int derrotas){
     };
 };
 
+
+/**
+ * @brief Atualiza os registros de vitórias e derrotas dos jogadores após uma partida.
+ * 
+ * @param vencedor Apelido do jogador vencedor.
+ * @param perdedor Apelido do jogador perdedor.
+ * @param linha_modificar Índice da linha do jogo que será modificada (0 = Reversi, 1 = Lig4, 2 = Jogo da Velha).
+ */
 void pontuarJogadores(std::string vencedor, std::string perdedor, int linha_modificar){
     std::string arq_nome="Jogadores.txt",temp_nome="Temporario.txt";
     std::ifstream arquivo(arq_nome);
@@ -96,6 +122,16 @@ void pontuarJogadores(std::string vencedor, std::string perdedor, int linha_modi
     };
 };
 
+
+/**
+ * @brief Gerencia uma rodada do Jogo da Velha.
+ * 
+ * @param turno Indica o turno atual (0 = jogador 1, 1 = jogador 2).
+ * @param vitoria Variável que indica se houve vitória na rodada (1 = vitória, 0 = sem vitória).
+ * @param apelido1 Apelido do jogador atual.
+ * @param apelido2 Apelido do adversário.
+ * @param tabuleiro Ponteiro para o objeto do jogo Jogo da Velha.
+ */
 void rodadaVelha(int turno, int &vitoria, std::string apelido1, std::string apelido2, JogoDaVelha* &tabuleiro){
     int linha, coluna;
     std::cout<<"Turno do jogador "<<apelido1<<":"<<std::endl;
@@ -123,6 +159,14 @@ void rodadaVelha(int turno, int &vitoria, std::string apelido1, std::string apel
 };
 
 
+
+/**
+ * @brief Executa uma partida completa de Jogo da Velha.
+ * 
+ * @param apelidoJ1 Apelido do jogador 1.
+ * @param apelidoJ2 Apelido do jogador 2.
+ * @param tabuleiro Ponteiro para o objeto do jogo Jogo da Velha.
+ */
 void partidaVelha(std::string apelidoJ1, std::string apelidoJ2, JogoDaVelha* &tabuleiro){
     int turno=0, vitoria=0,linha,coluna;
     while(!vitoria){
@@ -137,6 +181,16 @@ void partidaVelha(std::string apelidoJ1, std::string apelidoJ2, JogoDaVelha* &ta
     };
 };
 
+
+/**
+ * @brief Gerencia uma rodada do jogo Lig4.
+ * 
+ * @param turno Indica o turno atual (0 = jogador 1, 1 = jogador 2).
+ * @param vitoria Variável que indica se houve vitória na rodada (1 = vitória, 0 = sem vitória).
+ * @param apelido1 Apelido do jogador atual.
+ * @param apelido2 Apelido do adversário.
+ * @param tabuleiro Ponteiro para o objeto do jogo Lig4.
+ */
 void rodadaLig4(int turno, int &vitoria, std::string apelido1, std::string apelido2, Lig4* &tabuleiro){
     int linha, coluna;
 
@@ -164,6 +218,14 @@ void rodadaLig4(int turno, int &vitoria, std::string apelido1, std::string apeli
 };
 
 
+
+/**
+ * @brief Executa uma partida completa do jogo Lig4.
+ * 
+ * @param apelidoJ1 Apelido do jogador 1.
+ * @param apelidoJ2 Apelido do jogador 2.
+ * @param tabuleiro Ponteiro para o objeto do jogo Lig4.
+ */
 void partidaLig4(std::string apelidoJ1, std::string apelidoJ2,Lig4* &tabuleiro){
     int turno=0, vitoria=0, coluna;
     while(!vitoria){
@@ -178,6 +240,16 @@ void partidaLig4(std::string apelidoJ1, std::string apelidoJ2,Lig4* &tabuleiro){
 
 };
 
+
+/**
+ * @brief Gerencia uma rodada do jogo Reversi.
+ * 
+ * @param turno Indica o turno atual (0 = jogador 1, 1 = jogador 2).
+ * @param vitoria Variável que indica se houve vitória na rodada (1 = vitória, 0 = sem vitória).
+ * @param apelido1 Apelido do jogador atual.
+ * @param apelido2 Apelido do adversário.
+ * @param tabuleiro Ponteiro para o objeto do jogo Reversi.
+ */
 void rodadaReversi(int turno, int &vitoria, std::string apelido1, std::string apelido2, Reversi* &tabuleiro){
     int linha, coluna, invalidade=0;
 
@@ -201,7 +273,13 @@ void rodadaReversi(int turno, int &vitoria, std::string apelido1, std::string ap
 
 };
 
-
+/**
+ * @brief Executa uma partida completa do jogo Reversi.
+ * 
+ * @param apelidoJ1 Apelido do jogador 1.
+ * @param apelidoJ2 Apelido do jogador 2.
+ * @param tabuleiro Ponteiro para o objeto do jogo Reversi.
+ */
 void partidaReversi(std::string apelidoJ1, std::string apelidoJ2,Reversi* &tabuleiro){
     int turno=0, vitoria=0,i=0;
     while(!vitoria){
@@ -216,6 +294,14 @@ void partidaReversi(std::string apelidoJ1, std::string apelidoJ2,Reversi* &tabul
     };
 };
 
+
+/**
+ * @brief Inicia uma partida de acordo com o tipo de jogo selecionado.
+ * 
+ * @param tipoJogo Tipo de jogo (R = Reversi, L = Lig4, V = Jogo da Velha).
+ * @param apelidoJ1 Apelido do jogador 1.
+ * @param apelidoJ2 Apelido do jogador 2.
+ */
 void executarPartida(char tipoJogo,std::string apelidoJ1,std::string apelidoJ2){
     int linha, coluna;
     switch(tipoJogo){

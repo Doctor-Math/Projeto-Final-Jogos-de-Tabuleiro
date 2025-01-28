@@ -5,6 +5,16 @@
 #include <string>
 #include "Cadastro.hpp"
 
+
+
+/**
+ * @brief Função para cadastrar um novo jogador no arquivo "Jogadores.txt".
+ * 
+ * Lê o nome e apelido do jogador e verifica se o jogador já existe no arquivo.
+ * Caso o jogador não exista, ele é adicionado ao final do arquivo com estatísticas zeradas.
+ * 
+ * @note O arquivo "Jogadores.txt" deve existir previamente.
+ */
 void cadastrarJogador(){
     std::string nome, apelido, arq_nome="Jogadores.txt";
     std::fstream arquivo(arq_nome,std::ios::in);
@@ -52,6 +62,15 @@ void cadastrarJogador(){
     arquivo.close();
 };
 
+
+/**
+ * @brief Função para remover um jogador do arquivo "Jogadores.txt".
+ * 
+ * Remove as informações do jogador especificado e reescreve o arquivo
+ * sem as linhas correspondentes ao jogador.
+ * 
+ * @note O arquivo "Jogadores.txt" deve existir previamente.
+ */
 void removerJogador(){
     std::string apelido, arq_nome="Jogadores.txt",temp_nome="Temporario.txt";
     std::ifstream arquivo(arq_nome);
@@ -101,6 +120,15 @@ void removerJogador(){
 
 };
 
+
+/**
+ * @brief Função para listar todos os jogadores cadastrados no arquivo "Jogadores.txt".
+ * 
+ * Imprime o conteúdo do arquivo na saída padrão. Se o arquivo estiver vazio,
+ * uma mensagem será exibida informando que não há jogadores cadastrados.
+ * 
+ * @note O arquivo "Jogadores.txt" deve existir previamente.
+ */
 void listarJogadores(){
     std::string apelido, linha, arq_nome="Jogadores.txt",temp_nome="Temporario.txt";
     std::ifstream arquivo(arq_nome);
@@ -124,6 +152,17 @@ void listarJogadores(){
     arquivo.close();
 };
 
+
+/**
+ * @brief Verifica se dois jogadores estão cadastrados no arquivo "Jogadores.txt".
+ * 
+ * @param apelidoJ1 Apelido do primeiro jogador.
+ * @param apelidoJ2 Apelido do segundo jogador.
+ * @return Retorna 1 se ambos os jogadores estiverem cadastrados, 0 se algum deles não estiver,
+ *         e -1 se houver um erro ao abrir o arquivo.
+ * 
+ * @note O arquivo "Jogadores.txt" deve existir previamente.
+ */
 int verificarCadastro(std::string apelidoJ1, std::string apelidoJ2){
     int encontradoJ1=0, encontradoJ2=0;
     std::string arq_nome="Jogadores.txt", linha;
