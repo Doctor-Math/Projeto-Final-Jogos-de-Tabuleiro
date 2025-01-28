@@ -1,4 +1,4 @@
-<h1 align="center"> Projeto Final - Jogos de Tabuleiro </h1>,
+<h1 align="center"> Projeto Final - Jogos de Tabuleiro </h1>
 
 **Aplicar os conceitos de PDS2 em um programa funcional que reflete nosso aprendizado durante as aulas**
 
