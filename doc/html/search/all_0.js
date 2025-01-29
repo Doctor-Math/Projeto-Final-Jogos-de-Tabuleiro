@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['de_20tabuleiro_0',['Projeto Final - Jogos de Tabuleiro',['../md_README.html',1,'']]]
+  ['cadastrarjogador',['cadastrarJogador',['../Cadastro_8cpp.html#ab63dd84afabba6c1ad653161142bc769',1,'Cadastro.cpp']]],
+  ['cadastro_2ecpp',['Cadastro.cpp',['../Cadastro_8cpp.html',1,'']]]
 ];

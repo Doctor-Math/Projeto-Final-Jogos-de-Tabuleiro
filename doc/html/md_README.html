@@ -1,11 +1,11 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Trabalho Final: Projeto Final - Jogos de Tabuleiro</title>
+<title>Trabalho Final: README</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -19,8 +19,8 @@
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr id="projectrow">
-  <td id="projectalign">
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Trabalho Final
    </div>
    <div id="projectbrief">Projeto final da disciplina de PDS2 - implementação de jogos.</div>
@@ -30,21 +30,17 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Gerado por Doxygen 1.9.8 -->
+<!-- Gerado por Doxygen 1.8.13 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-var searchBox = new SearchBox("searchBox", "search/",'.html');
-/* @license-end */
+var searchBox = new SearchBox("searchBox", "search",false,'Busca');
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
   initMenu('',true,false,'search.php','Busca');
   $(document).ready(function() { init_search(); });
 });
-/* @license-end */
 </script>
 <div id="main-nav"></div>
 <!-- window showing the filter options -->
@@ -56,29 +52,92 @@ $(function() {
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<div id="MSearchResults">
-<div class="SRPage">
-<div id="SRIndex">
-<div id="SRResults"></div>
-<div class="SRStatus" id="Loading">Carregando...</div>
-<div class="SRStatus" id="Searching">Procurando...</div>
-<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
-</div>
-</div>
-</div>
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
 </div>
 
 </div><!-- top -->
-<div><div class="header">
-  <div class="headertitle"><div class="title">Projeto Final - Jogos de Tabuleiro</div></div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">README </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md0"></a></p>
+<div class="textblock"><h1 align="center">Projeto Final - Jogos de Tabuleiro ♟ </h1>
+<p><b>Aplicar os conceitos de PDS2 em um programa funcional que reflete nosso aprendizado durante as aulas</b></p>
+<ul>
+<li>Participantes 🧑‍💻: Guilherme Bueno de Andrade Motta, Gustavo Cabral Gonçalves, Matheus Soares e Renato Lucas</li>
+</ul>
+<p><b>Introdução</b></p>
+<p>Neste projeto, vamos aplicar técnicas aprendidas em sala de aula com o objetivo de criar um programa que reproduz o funcionamento de vários jogos tabuleiro, sendo eles Jogo da Velha, Lig4 e Reversi. Neste programa foram aplicados conceitos de Modularização, Classes, Programação Orientada a Objetos (POO), entre outros. Para realizar o projeto utilizamos das ferramentas do GitHub, VScode, Doxygen e Docteste. Tal programa foi feito com a finalidade para que possamos simular um ambiente de programação em equipe e também nos ambientarmos com as novas técnicas aprendidas.</p>
+<h1><a class="anchor" id="autotoc_md0"></a>
+Projeto 🏆</h1>
+<p><b>Modularização 🐉</b></p>
+<p>O programa é dividido em módulos para que ele seja melhor organizado fácilitando a entende-lo e também para ajudar o trabalho em equipe para que vários participantes possam programas em diferentes módulos ao mesmo tempo.</p>
+<p>A modularização foi dividida em pastas. Os arquivos hpp, que estão na pasta include, Definem as classes e funções utilizadas no projeto. Já os arquivos com as implementações, os cpp, estão na pasta src, eles definem as classes e funções utilizadas no projeto para serem utilizadas no arquivo main. Além deles temos o arquivo principal(main) e o Makefile, o primeiro deles é responsável por executar o programa e o segundo é encarregado de compilar o projeto automaticamente.</p>
+<p><em><b>CLASSES🥋</b></em></p>
+<p><b>🟣Classe Abstrata</b>: JogoTabuleiro</p>
+<p>🧐Responsabilidades:</p>
+<p>Fornecer a estrutura do tabuleiro;</p>
+<p>Fornecer peças;</p>
+<p>Ler uma jogada;</p>
+<p>Testar a validade da jogada;</p>
+<p>Testar condições de vitória;</p>
+<p>Imprimir tabuleiro.</p>
+<p>🤝Colaboração:</p>
+<p>Nenhuma.</p>
+<p><b>🟠Classe Herdeira</b>: JogoDaVelha</p>
+<p>🧐Responsabilidades:</p>
+<p>(Herdada de JogoTabuleiro) Fornecer a estrutura do tabuleiro;</p>
+<p>(Herdada de JogoTabuleiro) Fornecer peças;</p>
+<p>(Herdada de JogoTabuleiro) Ler uma jogada;</p>
+<p>(Herdada de JogoTabuleiro) Sobrescreve o método validarJogada() para testar a validade da jogada no jogo da velha;</p>
+<p>(Herdada de JogoTabuleiro) Sobrescreve o método verificarVitoria() para testar as condições de vitória específicas do jogo da velha;</p>
+<p>(Herdada de JogoTabuleiro) Sobrescreve o método imprimirTabuleiro() para imprimir o tabuleiro. </p>
+<p>🤝Colaboração:</p>
+<p>JogoTabuleiro.</p>
+<p><b>🟠Classe Herdeira</b>: Lig4</p>
+<p>🧐Responsabilidades:</p>
+<p>(Herdada de JogoTabuleiro) Fornecer a estrutura do tabuleiro;</p>
+<p>(Herdada de JogoTabuleiro) Fornecer peças;</p>
+<p>(Herdada de JogoTabuleiro) Ler uma jogada;</p>
+<p>(Herdada de JogoTabuleiro) Sobrescreve o método validarJogada() para testar a validade da jogada no jogo lig4;</p>
+<p>(Herdada de JogoTabuleiro) Sobrescreve o método verificarVitoria() para testar as condições de vitória específicas do lig4;</p>
+<p>(Herdada de JogoTabuleiro) Sobrescreve o método imprimirTabuleiro() para imprimir o tabuleiro. </p>
+<p>🤝Colaboração:</p>
+<p>JogoTabuleiro.</p>
+<p><b>🟠Classe Herdeira</b>: Reversi</p>
+<p>🧐Responsabilidades:</p>
+<p>(Herdado de JogoTabuleiro) Fornecer a estrutura do tabuleiro.</p>
+<p>(Herdado de JogoTabuleiro) Fornecer peças.</p>
+<p>(Herdado de JogoTabuleiro) Ler uma jogada.</p>
+<p>(Herdado de JogoTabuleiro) Sobrescreve o método validarJogada() para testar a validade da jogada no jogo Reversi.</p>
+<p>(Herdado de JogoTabuleiro) Sobrescreve o método verificarVitoria() para verificar as condições de vitória específicas do Reversi.</p>
+<p>(Herdado de JogoTabuleiro) Sobrescreve o método imprimirTabuleiro() para imprimir o tabuleiro</p>
+<p>Novo método verificarDirecao(int, int, int, int, int): Método que verifica se há peças alinhadas em uma determinada direção (útil para capturar peças no Reversi).</p>
+<p>🤝Colaboração:</p>
+<p>JogoTabuleiro.</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Funcionamento Do Programa 🧑‍💻</h1>
+<p>No início do programa o usuário pode se cadastrar escolhendo o seu nome e apelido, esses dados vão para um arquivo no qual o usuário pode cadastrar mais jogadores ou remover os já criados. Após o cadastro, o usuário escolhe qual jogo ele quer iniciar a depender das letras que ele digitar, por exemplo R -&gt; Reversi, L -&gt;Lig e V-&gt; Jogo da Velha. Na execução das partidas o usuário deve entrar com os apelidos dos dois jogadores e o sistema mostrar uma partida do jogo selecionado, sendo ela interatica na qual os dois jogadores podem competir entre si. Durante a partida o sistema ele é capaz de checar se uma jogada é válida ou não, atualizar o jogo a cada jogada e testar uma possível vitória de um jogador. No final do jogo, o programa mostra o vencedor e no banco de dados que contém os nomes e apelidos dos jogadores ele atualiza as estatísticas dos indivíduos.</p>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Dificuldades 😮‍💨</h1>
+<p>A criação desse algoritmo foi um processo ao mesmo tempo muito divertido, foi também custoso. A liberdade de poder criar um código da nossa maneira, poder usar todos os nossos conhecimentos e quando não sabiamos o que fazer, pesquisar na internet, conversar entre nós e com outros colegas sobre alguma solução para o problema, foram situações satisfatórias.</p>
+<p>Em muitos momentos, pensavamos que o código estava funcionando da maneira correta e ao prosseguir por outro teste e ele dar totalmente errado era bem desagradável, mas sempre uma oportunidade de procurar o erro e resolve-lo da melhor maneira possível.</p>
+<p>😡Nossas principais dificuldades foram:</p>
+<ul>
+<li>Conseguir fazer a verificação de vitórias no jogo Reversi e Lig4</li>
+<li>Se ambientar com o GitHub e suas funcionalidades</li>
+<li>Conseguir que o sistema conseguisse entender e marcar cada jogada</li>
+<li>Aprender o usar o doxygen</li>
+<li>Tentar entender a lógica geral do programa </li>
+</ul>
 </div></div><!-- contents -->
-</div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
 </small></address>
 </body>
 </html>

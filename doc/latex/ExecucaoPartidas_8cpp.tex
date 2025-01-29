@@ -1,0 +1,228 @@
+\hypertarget{ExecucaoPartidas_8cpp}{}\section{Referência do Arquivo src/\+Execucao\+Partidas.cpp}
+\label{ExecucaoPartidas_8cpp}\index{src/\+Execucao\+Partidas.\+cpp@{src/\+Execucao\+Partidas.\+cpp}}
+
+
+Implementação das funções para execução das partidas e manipulação de resultados dos jogos.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \char`\"{}Execucao\+Partidas.\+hpp\char`\"{}}\newline
+Gráfico de dependência de inclusões para Execucao\+Partidas.\+cpp\+:
+% FIG 0
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{ExecucaoPartidas_8cpp_a9109e6e4383d5b3587eb41e2f877818c}{escrever\+Jogo} (std\+::ofstream \&arq\+\_\+temp, int i, int vitorias, int derrotas)
+\begin{DoxyCompactList}\small\item\em Escreve no arquivo temporário os dados de vitória e derrota de um jogador. \end{DoxyCompactList}\item 
+void \hyperlink{ExecucaoPartidas_8cpp_a43f502082a004c14144b76ebacbc27d3}{pontuar\+Jogadores} (std\+::string vencedor, std\+::string perdedor, int linha\+\_\+modificar)
+\begin{DoxyCompactList}\small\item\em Atualiza os registros de vitórias e derrotas dos jogadores após uma partida. \end{DoxyCompactList}\item 
+void \hyperlink{ExecucaoPartidas_8cpp_a17c2e04fe7d05ed0216b24b0f40cd1ac}{rodada\+Velha} (int turno, int \&vitoria, std\+::string apelido1, std\+::string apelido2, Jogo\+Da\+Velha $\ast$\&tabuleiro)
+\begin{DoxyCompactList}\small\item\em Gerencia uma rodada do Jogo da Velha. \end{DoxyCompactList}\item 
+void \hyperlink{ExecucaoPartidas_8cpp_ae9b06a02f0b0971801b35661ac84f8cd}{partida\+Velha} (std\+::string apelido\+J1, std\+::string apelido\+J2, Jogo\+Da\+Velha $\ast$\&tabuleiro)
+\begin{DoxyCompactList}\small\item\em Executa uma partida completa de Jogo da Velha. \end{DoxyCompactList}\item 
+void \hyperlink{ExecucaoPartidas_8cpp_aeb40b584270f5bee5e8d22ddff34f783}{rodada\+Lig4} (int turno, int \&vitoria, std\+::string apelido1, std\+::string apelido2, Lig4 $\ast$\&tabuleiro)
+\begin{DoxyCompactList}\small\item\em Gerencia uma rodada do jogo Lig4. \end{DoxyCompactList}\item 
+void \hyperlink{ExecucaoPartidas_8cpp_a2cfab320b1c4cbdd894724c2f6631795}{partida\+Lig4} (std\+::string apelido\+J1, std\+::string apelido\+J2, Lig4 $\ast$\&tabuleiro)
+\begin{DoxyCompactList}\small\item\em Executa uma partida completa do jogo Lig4. \end{DoxyCompactList}\item 
+void \hyperlink{ExecucaoPartidas_8cpp_a5c186e4d000fadc954c3687587bd9011}{rodada\+Reversi} (int turno, int \&vitoria, std\+::string apelido1, std\+::string apelido2, Reversi $\ast$\&tabuleiro)
+\begin{DoxyCompactList}\small\item\em Gerencia uma rodada do jogo Reversi. \end{DoxyCompactList}\item 
+void \hyperlink{ExecucaoPartidas_8cpp_ad7876934c8646d9fa665ffe53f380cee}{partida\+Reversi} (std\+::string apelido\+J1, std\+::string apelido\+J2, Reversi $\ast$\&tabuleiro)
+\begin{DoxyCompactList}\small\item\em Executa uma partida completa do jogo Reversi. \end{DoxyCompactList}\item 
+void \hyperlink{ExecucaoPartidas_8cpp_a167964c29bd94d682b546ffdd426e12d}{executar\+Partida} (char tipo\+Jogo, std\+::string apelido\+J1, std\+::string apelido\+J2)
+\begin{DoxyCompactList}\small\item\em Inicia uma partida de acordo com o tipo de jogo selecionado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descrição Detalhada}
+Implementação das funções para execução das partidas e manipulação de resultados dos jogos. 
+
+Este arquivo contém as funções necessárias para gerenciar partidas de diferentes tipos de jogos, registrar resultados e atualizar os dados dos jogadores. 
+
+\subsection{Funções}
+\mbox{\Hypertarget{ExecucaoPartidas_8cpp_a9109e6e4383d5b3587eb41e2f877818c}\label{ExecucaoPartidas_8cpp_a9109e6e4383d5b3587eb41e2f877818c}} 
+\index{Execucao\+Partidas.\+cpp@{Execucao\+Partidas.\+cpp}!escrever\+Jogo@{escrever\+Jogo}}
+\index{escrever\+Jogo@{escrever\+Jogo}!Execucao\+Partidas.\+cpp@{Execucao\+Partidas.\+cpp}}
+\subsubsection{\texorpdfstring{escrever\+Jogo()}{escreverJogo()}}
+{\footnotesize\ttfamily void escrever\+Jogo (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{arq\+\_\+temp,  }\item[{int}]{i,  }\item[{int}]{vitorias,  }\item[{int}]{derrotas }\end{DoxyParamCaption})}
+
+
+
+Escreve no arquivo temporário os dados de vitória e derrota de um jogador. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em arq\+\_\+temp} & Arquivo temporário onde os dados serão escritos. \\
+\hline
+{\em i} & Índice do tipo de jogo (0 = Reversi, 1 = Lig4, 2 = Jogo da Velha). \\
+\hline
+{\em vitorias} & Número de vitórias do jogador. \\
+\hline
+{\em derrotas} & Número de derrotas do jogador. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ExecucaoPartidas_8cpp_a167964c29bd94d682b546ffdd426e12d}\label{ExecucaoPartidas_8cpp_a167964c29bd94d682b546ffdd426e12d}} 
+\index{Execucao\+Partidas.\+cpp@{Execucao\+Partidas.\+cpp}!executar\+Partida@{executar\+Partida}}
+\index{executar\+Partida@{executar\+Partida}!Execucao\+Partidas.\+cpp@{Execucao\+Partidas.\+cpp}}
+\subsubsection{\texorpdfstring{executar\+Partida()}{executarPartida()}}
+{\footnotesize\ttfamily void executar\+Partida (\begin{DoxyParamCaption}\item[{char}]{tipo\+Jogo,  }\item[{std\+::string}]{apelido\+J1,  }\item[{std\+::string}]{apelido\+J2 }\end{DoxyParamCaption})}
+
+
+
+Inicia uma partida de acordo com o tipo de jogo selecionado. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em tipo\+Jogo} & Tipo de jogo (R = Reversi, L = Lig4, V = Jogo da Velha). \\
+\hline
+{\em apelido\+J1} & Apelido do jogador 1. \\
+\hline
+{\em apelido\+J2} & Apelido do jogador 2. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ExecucaoPartidas_8cpp_a2cfab320b1c4cbdd894724c2f6631795}\label{ExecucaoPartidas_8cpp_a2cfab320b1c4cbdd894724c2f6631795}} 
+\index{Execucao\+Partidas.\+cpp@{Execucao\+Partidas.\+cpp}!partida\+Lig4@{partida\+Lig4}}
+\index{partida\+Lig4@{partida\+Lig4}!Execucao\+Partidas.\+cpp@{Execucao\+Partidas.\+cpp}}
+\subsubsection{\texorpdfstring{partida\+Lig4()}{partidaLig4()}}
+{\footnotesize\ttfamily void partida\+Lig4 (\begin{DoxyParamCaption}\item[{std\+::string}]{apelido\+J1,  }\item[{std\+::string}]{apelido\+J2,  }\item[{Lig4 $\ast$\&}]{tabuleiro }\end{DoxyParamCaption})}
+
+
+
+Executa uma partida completa do jogo Lig4. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em apelido\+J1} & Apelido do jogador 1. \\
+\hline
+{\em apelido\+J2} & Apelido do jogador 2. \\
+\hline
+{\em tabuleiro} & Ponteiro para o objeto do jogo Lig4. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ExecucaoPartidas_8cpp_ad7876934c8646d9fa665ffe53f380cee}\label{ExecucaoPartidas_8cpp_ad7876934c8646d9fa665ffe53f380cee}} 
+\index{Execucao\+Partidas.\+cpp@{Execucao\+Partidas.\+cpp}!partida\+Reversi@{partida\+Reversi}}
+\index{partida\+Reversi@{partida\+Reversi}!Execucao\+Partidas.\+cpp@{Execucao\+Partidas.\+cpp}}
+\subsubsection{\texorpdfstring{partida\+Reversi()}{partidaReversi()}}
+{\footnotesize\ttfamily void partida\+Reversi (\begin{DoxyParamCaption}\item[{std\+::string}]{apelido\+J1,  }\item[{std\+::string}]{apelido\+J2,  }\item[{Reversi $\ast$\&}]{tabuleiro }\end{DoxyParamCaption})}
+
+
+
+Executa uma partida completa do jogo Reversi. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em apelido\+J1} & Apelido do jogador 1. \\
+\hline
+{\em apelido\+J2} & Apelido do jogador 2. \\
+\hline
+{\em tabuleiro} & Ponteiro para o objeto do jogo Reversi. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ExecucaoPartidas_8cpp_ae9b06a02f0b0971801b35661ac84f8cd}\label{ExecucaoPartidas_8cpp_ae9b06a02f0b0971801b35661ac84f8cd}} 
+\index{Execucao\+Partidas.\+cpp@{Execucao\+Partidas.\+cpp}!partida\+Velha@{partida\+Velha}}
+\index{partida\+Velha@{partida\+Velha}!Execucao\+Partidas.\+cpp@{Execucao\+Partidas.\+cpp}}
+\subsubsection{\texorpdfstring{partida\+Velha()}{partidaVelha()}}
+{\footnotesize\ttfamily void partida\+Velha (\begin{DoxyParamCaption}\item[{std\+::string}]{apelido\+J1,  }\item[{std\+::string}]{apelido\+J2,  }\item[{Jogo\+Da\+Velha $\ast$\&}]{tabuleiro }\end{DoxyParamCaption})}
+
+
+
+Executa uma partida completa de Jogo da Velha. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em apelido\+J1} & Apelido do jogador 1. \\
+\hline
+{\em apelido\+J2} & Apelido do jogador 2. \\
+\hline
+{\em tabuleiro} & Ponteiro para o objeto do jogo Jogo da Velha. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ExecucaoPartidas_8cpp_a43f502082a004c14144b76ebacbc27d3}\label{ExecucaoPartidas_8cpp_a43f502082a004c14144b76ebacbc27d3}} 
+\index{Execucao\+Partidas.\+cpp@{Execucao\+Partidas.\+cpp}!pontuar\+Jogadores@{pontuar\+Jogadores}}
+\index{pontuar\+Jogadores@{pontuar\+Jogadores}!Execucao\+Partidas.\+cpp@{Execucao\+Partidas.\+cpp}}
+\subsubsection{\texorpdfstring{pontuar\+Jogadores()}{pontuarJogadores()}}
+{\footnotesize\ttfamily void pontuar\+Jogadores (\begin{DoxyParamCaption}\item[{std\+::string}]{vencedor,  }\item[{std\+::string}]{perdedor,  }\item[{int}]{linha\+\_\+modificar }\end{DoxyParamCaption})}
+
+
+
+Atualiza os registros de vitórias e derrotas dos jogadores após uma partida. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em vencedor} & Apelido do jogador vencedor. \\
+\hline
+{\em perdedor} & Apelido do jogador perdedor. \\
+\hline
+{\em linha\+\_\+modificar} & Índice da linha do jogo que será modificada (0 = Reversi, 1 = Lig4, 2 = Jogo da Velha). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ExecucaoPartidas_8cpp_aeb40b584270f5bee5e8d22ddff34f783}\label{ExecucaoPartidas_8cpp_aeb40b584270f5bee5e8d22ddff34f783}} 
+\index{Execucao\+Partidas.\+cpp@{Execucao\+Partidas.\+cpp}!rodada\+Lig4@{rodada\+Lig4}}
+\index{rodada\+Lig4@{rodada\+Lig4}!Execucao\+Partidas.\+cpp@{Execucao\+Partidas.\+cpp}}
+\subsubsection{\texorpdfstring{rodada\+Lig4()}{rodadaLig4()}}
+{\footnotesize\ttfamily void rodada\+Lig4 (\begin{DoxyParamCaption}\item[{int}]{turno,  }\item[{int \&}]{vitoria,  }\item[{std\+::string}]{apelido1,  }\item[{std\+::string}]{apelido2,  }\item[{Lig4 $\ast$\&}]{tabuleiro }\end{DoxyParamCaption})}
+
+
+
+Gerencia uma rodada do jogo Lig4. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em turno} & Indica o turno atual (0 = jogador 1, 1 = jogador 2). \\
+\hline
+{\em vitoria} & Variável que indica se houve vitória na rodada (1 = vitória, 0 = sem vitória). \\
+\hline
+{\em apelido1} & Apelido do jogador atual. \\
+\hline
+{\em apelido2} & Apelido do adversário. \\
+\hline
+{\em tabuleiro} & Ponteiro para o objeto do jogo Lig4. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ExecucaoPartidas_8cpp_a5c186e4d000fadc954c3687587bd9011}\label{ExecucaoPartidas_8cpp_a5c186e4d000fadc954c3687587bd9011}} 
+\index{Execucao\+Partidas.\+cpp@{Execucao\+Partidas.\+cpp}!rodada\+Reversi@{rodada\+Reversi}}
+\index{rodada\+Reversi@{rodada\+Reversi}!Execucao\+Partidas.\+cpp@{Execucao\+Partidas.\+cpp}}
+\subsubsection{\texorpdfstring{rodada\+Reversi()}{rodadaReversi()}}
+{\footnotesize\ttfamily void rodada\+Reversi (\begin{DoxyParamCaption}\item[{int}]{turno,  }\item[{int \&}]{vitoria,  }\item[{std\+::string}]{apelido1,  }\item[{std\+::string}]{apelido2,  }\item[{Reversi $\ast$\&}]{tabuleiro }\end{DoxyParamCaption})}
+
+
+
+Gerencia uma rodada do jogo Reversi. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em turno} & Indica o turno atual (0 = jogador 1, 1 = jogador 2). \\
+\hline
+{\em vitoria} & Variável que indica se houve vitória na rodada (1 = vitória, 0 = sem vitória). \\
+\hline
+{\em apelido1} & Apelido do jogador atual. \\
+\hline
+{\em apelido2} & Apelido do adversário. \\
+\hline
+{\em tabuleiro} & Ponteiro para o objeto do jogo Reversi. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ExecucaoPartidas_8cpp_a17c2e04fe7d05ed0216b24b0f40cd1ac}\label{ExecucaoPartidas_8cpp_a17c2e04fe7d05ed0216b24b0f40cd1ac}} 
+\index{Execucao\+Partidas.\+cpp@{Execucao\+Partidas.\+cpp}!rodada\+Velha@{rodada\+Velha}}
+\index{rodada\+Velha@{rodada\+Velha}!Execucao\+Partidas.\+cpp@{Execucao\+Partidas.\+cpp}}
+\subsubsection{\texorpdfstring{rodada\+Velha()}{rodadaVelha()}}
+{\footnotesize\ttfamily void rodada\+Velha (\begin{DoxyParamCaption}\item[{int}]{turno,  }\item[{int \&}]{vitoria,  }\item[{std\+::string}]{apelido1,  }\item[{std\+::string}]{apelido2,  }\item[{Jogo\+Da\+Velha $\ast$\&}]{tabuleiro }\end{DoxyParamCaption})}
+
+
+
+Gerencia uma rodada do Jogo da Velha. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em turno} & Indica o turno atual (0 = jogador 1, 1 = jogador 2). \\
+\hline
+{\em vitoria} & Variável que indica se houve vitória na rodada (1 = vitória, 0 = sem vitória). \\
+\hline
+{\em apelido1} & Apelido do jogador atual. \\
+\hline
+{\em apelido2} & Apelido do adversário. \\
+\hline
+{\em tabuleiro} & Ponteiro para o objeto do jogo Jogo da Velha. \\
+\hline
+\end{DoxyParams}

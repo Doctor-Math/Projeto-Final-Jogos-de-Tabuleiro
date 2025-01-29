@@ -1,0 +1,92 @@
+\hypertarget{Cadastro_8cpp}{}\section{Referência do Arquivo src/\+Cadastro.cpp}
+\label{Cadastro_8cpp}\index{src/\+Cadastro.\+cpp@{src/\+Cadastro.\+cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \char`\"{}Cadastro.\+hpp\char`\"{}}\newline
+Gráfico de dependência de inclusões para Cadastro.\+cpp\+:
+% FIG 0
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{Cadastro_8cpp_ab63dd84afabba6c1ad653161142bc769}{cadastrar\+Jogador} ()
+\begin{DoxyCompactList}\small\item\em Função para cadastrar um novo jogador no arquivo \char`\"{}\+Jogadores.\+txt\char`\"{}. \end{DoxyCompactList}\item 
+void \hyperlink{Cadastro_8cpp_af751b98f97728c80ce9b3cc8789d8780}{remover\+Jogador} ()
+\begin{DoxyCompactList}\small\item\em Função para remover um jogador do arquivo \char`\"{}\+Jogadores.\+txt\char`\"{}. \end{DoxyCompactList}\item 
+void \hyperlink{Cadastro_8cpp_ac0f0834a2a4a602263e22f1fde0e3553}{listar\+Jogadores} ()
+\begin{DoxyCompactList}\small\item\em Função para listar todos os jogadores cadastrados no arquivo \char`\"{}\+Jogadores.\+txt\char`\"{}. \end{DoxyCompactList}\item 
+int \hyperlink{Cadastro_8cpp_abaa34b1b22d546b940f9f46524f888bf}{verificar\+Cadastro} (std\+::string apelido\+J1, std\+::string apelido\+J2)
+\begin{DoxyCompactList}\small\item\em Verifica se dois jogadores estão cadastrados no arquivo \char`\"{}\+Jogadores.\+txt\char`\"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Funções}
+\mbox{\Hypertarget{Cadastro_8cpp_ab63dd84afabba6c1ad653161142bc769}\label{Cadastro_8cpp_ab63dd84afabba6c1ad653161142bc769}} 
+\index{Cadastro.\+cpp@{Cadastro.\+cpp}!cadastrar\+Jogador@{cadastrar\+Jogador}}
+\index{cadastrar\+Jogador@{cadastrar\+Jogador}!Cadastro.\+cpp@{Cadastro.\+cpp}}
+\subsubsection{\texorpdfstring{cadastrar\+Jogador()}{cadastrarJogador()}}
+{\footnotesize\ttfamily void cadastrar\+Jogador (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Função para cadastrar um novo jogador no arquivo \char`\"{}\+Jogadores.\+txt\char`\"{}. 
+
+Lê o nome e apelido do jogador e verifica se o jogador já existe no arquivo. Caso o jogador não exista, ele é adicionado ao final do arquivo com estatísticas zeradas.
+
+\begin{DoxyNote}{Observação}
+O arquivo \char`\"{}\+Jogadores.\+txt\char`\"{} deve existir previamente. 
+\end{DoxyNote}
+\mbox{\Hypertarget{Cadastro_8cpp_ac0f0834a2a4a602263e22f1fde0e3553}\label{Cadastro_8cpp_ac0f0834a2a4a602263e22f1fde0e3553}} 
+\index{Cadastro.\+cpp@{Cadastro.\+cpp}!listar\+Jogadores@{listar\+Jogadores}}
+\index{listar\+Jogadores@{listar\+Jogadores}!Cadastro.\+cpp@{Cadastro.\+cpp}}
+\subsubsection{\texorpdfstring{listar\+Jogadores()}{listarJogadores()}}
+{\footnotesize\ttfamily void listar\+Jogadores (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Função para listar todos os jogadores cadastrados no arquivo \char`\"{}\+Jogadores.\+txt\char`\"{}. 
+
+Imprime o conteúdo do arquivo na saída padrão. Se o arquivo estiver vazio, uma mensagem será exibida informando que não há jogadores cadastrados.
+
+\begin{DoxyNote}{Observação}
+O arquivo \char`\"{}\+Jogadores.\+txt\char`\"{} deve existir previamente. 
+\end{DoxyNote}
+\mbox{\Hypertarget{Cadastro_8cpp_af751b98f97728c80ce9b3cc8789d8780}\label{Cadastro_8cpp_af751b98f97728c80ce9b3cc8789d8780}} 
+\index{Cadastro.\+cpp@{Cadastro.\+cpp}!remover\+Jogador@{remover\+Jogador}}
+\index{remover\+Jogador@{remover\+Jogador}!Cadastro.\+cpp@{Cadastro.\+cpp}}
+\subsubsection{\texorpdfstring{remover\+Jogador()}{removerJogador()}}
+{\footnotesize\ttfamily void remover\+Jogador (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Função para remover um jogador do arquivo \char`\"{}\+Jogadores.\+txt\char`\"{}. 
+
+Remove as informações do jogador especificado e reescreve o arquivo sem as linhas correspondentes ao jogador.
+
+\begin{DoxyNote}{Observação}
+O arquivo \char`\"{}\+Jogadores.\+txt\char`\"{} deve existir previamente. 
+\end{DoxyNote}
+\mbox{\Hypertarget{Cadastro_8cpp_abaa34b1b22d546b940f9f46524f888bf}\label{Cadastro_8cpp_abaa34b1b22d546b940f9f46524f888bf}} 
+\index{Cadastro.\+cpp@{Cadastro.\+cpp}!verificar\+Cadastro@{verificar\+Cadastro}}
+\index{verificar\+Cadastro@{verificar\+Cadastro}!Cadastro.\+cpp@{Cadastro.\+cpp}}
+\subsubsection{\texorpdfstring{verificar\+Cadastro()}{verificarCadastro()}}
+{\footnotesize\ttfamily int verificar\+Cadastro (\begin{DoxyParamCaption}\item[{std\+::string}]{apelido\+J1,  }\item[{std\+::string}]{apelido\+J2 }\end{DoxyParamCaption})}
+
+
+
+Verifica se dois jogadores estão cadastrados no arquivo \char`\"{}\+Jogadores.\+txt\char`\"{}. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em apelido\+J1} & Apelido do primeiro jogador. \\
+\hline
+{\em apelido\+J2} & Apelido do segundo jogador. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Retorna 1 se ambos os jogadores estiverem cadastrados, 0 se algum deles não estiver, e -\/1 se houver um erro ao abrir o arquivo.
+\end{DoxyReturn}
+\begin{DoxyNote}{Observação}
+O arquivo \char`\"{}\+Jogadores.\+txt\char`\"{} deve existir previamente. 
+\end{DoxyNote}

@@ -1,0 +1,111 @@
+\hypertarget{main_8cpp}{}\section{Referência do Arquivo src/main.cpp}
+\label{main_8cpp}\index{src/main.\+cpp@{src/main.\+cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}Cadastro.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Execucao\+Partidas.\+hpp\char`\"{}}\newline
+Gráfico de dependência de inclusões para main.\+cpp\+:
+% FIG 0
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\begin{DoxyCompactList}\small\item\em Função principal do sistema de jogos de tabuleiro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Funções}
+\mbox{\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{main.\+cpp@{main.\+cpp}!main@{main}}
+\index{main@{main}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Função principal do sistema de jogos de tabuleiro. 
+
+O programa permite o cadastro, remoção e listagem de jogadores, além de executar partidas de jogos como Reversi, Lig4 e Jogo da Velha. O usuário interage através de comandos específicos.
+
+Comandos disponíveis\+:
+\begin{DoxyItemize}
+\item CJ\+: Cadastrar jogador
+\item RJ\+: Remover jogador
+\item LJ\+: Listar jogadores
+\item EP\+: Executar partida
+\begin{DoxyItemize}
+\item R\+: Reversi
+\item L\+: Lig4
+\item V\+: Jogo da Velha
+\end{DoxyItemize}
+\item FS\+: Finalizar sistema
+\end{DoxyItemize}
+
+O programa exive um menu com comandos e solicita entradas do usuário para executar as opereações desejadas
+
+\begin{DoxyReturn}{Retorna}
+int Retorna 0 ao finalizar o programa com sucesso. 
+\end{DoxyReturn}
+Exibe o menu inicial do sistema.
+
+Loop principal para processar comandos do usuário.
+
+O loop continua até que o comando \char`\"{}\+F\+S\char`\"{} (Finalizar Sistema) seja recebido. Em cada iteração, o programa\+:
+\begin{DoxyItemize}
+\item Lê o comando inserido pelo usuário.
+\item Executa a operação correspondente (como cadastrar, remover ou listar jogadores, ou iniciar uma partida).
+\item Exibe uma mensagem de erro para comandos inválidos.
+\end{DoxyItemize}
+
+Comando para cadastrar um novo jogador.
+
+Chama a função \hyperlink{Cadastro_8cpp_ab63dd84afabba6c1ad653161142bc769}{cadastrar\+Jogador()} do módulo Cadastro.
+
+Comando para remover um jogador existente.
+
+Chama a função \hyperlink{Cadastro_8cpp_af751b98f97728c80ce9b3cc8789d8780}{remover\+Jogador()} do módulo Cadastro.
+
+Comando para listar os jogadores cadastrados.
+
+Chama a função \hyperlink{Cadastro_8cpp_ac0f0834a2a4a602263e22f1fde0e3553}{listar\+Jogadores()} do módulo Cadastro.
+
+Comando para executar uma partida entre dois jogadores.
+
+Solicita o tipo de jogo e os apelidos dos dois jogadores. Valida se ambos os jogadores estão cadastrados antes de iniciar a partida.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em tipo\+Jogo} & Tipo de jogo escolhido (R\+: Reversi, L\+: Lig4, V\+: Jogo da Velha). \\
+\hline
+{\em apelido\+J1} & Apelido do jogador 1. \\
+\hline
+{\em apelido\+J2} & Apelido do jogador 2. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceções}
+{\em Exibe} & mensagem de erro caso um ou ambos os jogadores não estejam cadastrados.\\
+\hline
+\end{DoxyExceptions}
+Verifica o cadastro dos jogadores e executa a partida, se possível.
+
+A função verificar\+Cadastro é chamada para verificar se os jogadores fornecidos (apelido\+J1 e apelido\+J2) estão cadastrados no sistema. Caso estejam, a função executar\+Partida é chamada para iniciar o jogo entre os dois jogadores, com o tipo de jogo selecionado. Caso contrário, uma mensagem de erro é exibida.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em tipo\+Jogo} & Tipo de jogo escolhido (R\+: Reversi, L\+: Lig4, V\+: Jogo da Velha). \\
+\hline
+{\em apelido\+J1} & Apelido do jogador 1. \\
+\hline
+{\em apelido\+J2} & Apelido do jogador 2.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+void 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceções}
+{\em Exibe} & uma mensagem de erro se um ou ambos os jogadores não estiverem cadastrados.\\
+\hline
+\end{DoxyExceptions}
+Tratamento para comandos inválidos.
+
+Exibe mensagem de erro caso o comando digitado seja diferente de \char`\"{}\+F\+S\char`\"{} e não esteja listado.

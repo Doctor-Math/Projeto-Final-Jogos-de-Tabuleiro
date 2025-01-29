@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Trabalho Final: Referência do Arquivo src/main.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Trabalho Final
+   </div>
+   <div id="projectbrief">Projeto final da disciplina de PDS2 - implementação de jogos.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Busca');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência do Arquivo main.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &quot;Cadastro.hpp&quot;</code><br />
+<code>#include &quot;ExecucaoPartidas.hpp&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Gráfico de dependência de inclusões para main.cpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp__incl.png" border="0" usemap="#src_2main_8cpp" alt=""/></div>
+<!-- MAP 0 -->
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
+<tr class="memdesc:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função principal do sistema de jogos de tabuleiro.  <a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">Mais...</a><br /></td></tr>
+<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Funções</h2>
+<a id="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&nbsp;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função principal do sistema de jogos de tabuleiro. </p>
+<p>O programa permite o cadastro, remoção e listagem de jogadores, além de executar partidas de jogos como Reversi, Lig4 e Jogo da Velha. O usuário interage através de comandos específicos.</p>
+<p>Comandos disponíveis:</p><ul>
+<li>CJ: Cadastrar jogador</li>
+<li>RJ: Remover jogador</li>
+<li>LJ: Listar jogadores</li>
+<li>EP: Executar partida<ul>
+<li>R: Reversi</li>
+<li>L: Lig4</li>
+<li>V: Jogo da Velha</li>
+</ul>
+</li>
+<li>FS: Finalizar sistema</li>
+</ul>
+<p>O programa exive um menu com comandos e solicita entradas do usuário para executar as opereações desejadas</p>
+<dl class="section return"><dt>Retorna</dt><dd>int Retorna 0 ao finalizar o programa com sucesso. </dd></dl>
+<p>Exibe o menu inicial do sistema.</p>
+<p>Loop principal para processar comandos do usuário.</p>
+<p>O loop continua até que o comando "FS" (Finalizar Sistema) seja recebido. Em cada iteração, o programa:</p><ul>
+<li>Lê o comando inserido pelo usuário.</li>
+<li>Executa a operação correspondente (como cadastrar, remover ou listar jogadores, ou iniciar uma partida).</li>
+<li>Exibe uma mensagem de erro para comandos inválidos.</li>
+</ul>
+<p>Comando para cadastrar um novo jogador.</p>
+<p>Chama a função <a class="el" href="Cadastro_8cpp.html#ab63dd84afabba6c1ad653161142bc769" title="Função para cadastrar um novo jogador no arquivo &quot;Jogadores.txt&quot;. ">cadastrarJogador()</a> do módulo Cadastro.</p>
+<p>Comando para remover um jogador existente.</p>
+<p>Chama a função <a class="el" href="Cadastro_8cpp.html#af751b98f97728c80ce9b3cc8789d8780" title="Função para remover um jogador do arquivo &quot;Jogadores.txt&quot;. ">removerJogador()</a> do módulo Cadastro.</p>
+<p>Comando para listar os jogadores cadastrados.</p>
+<p>Chama a função <a class="el" href="Cadastro_8cpp.html#ac0f0834a2a4a602263e22f1fde0e3553" title="Função para listar todos os jogadores cadastrados no arquivo &quot;Jogadores.txt&quot;. ">listarJogadores()</a> do módulo Cadastro.</p>
+<p>Comando para executar uma partida entre dois jogadores.</p>
+<p>Solicita o tipo de jogo e os apelidos dos dois jogadores. Valida se ambos os jogadores estão cadastrados antes de iniciar a partida.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tipoJogo</td><td>Tipo de jogo escolhido (R: Reversi, L: Lig4, V: Jogo da Velha). </td></tr>
+    <tr><td class="paramname">apelidoJ1</td><td>Apelido do jogador 1. </td></tr>
+    <tr><td class="paramname">apelidoJ2</td><td>Apelido do jogador 2. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">Exibe</td><td>mensagem de erro caso um ou ambos os jogadores não estejam cadastrados.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Verifica o cadastro dos jogadores e executa a partida, se possível.</p>
+<p>A função verificarCadastro é chamada para verificar se os jogadores fornecidos (apelidoJ1 e apelidoJ2) estão cadastrados no sistema. Caso estejam, a função executarPartida é chamada para iniciar o jogo entre os dois jogadores, com o tipo de jogo selecionado. Caso contrário, uma mensagem de erro é exibida.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tipoJogo</td><td>Tipo de jogo escolhido (R: Reversi, L: Lig4, V: Jogo da Velha). </td></tr>
+    <tr><td class="paramname">apelidoJ1</td><td>Apelido do jogador 1. </td></tr>
+    <tr><td class="paramname">apelidoJ2</td><td>Apelido do jogador 2.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>void </dd></dl>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">Exibe</td><td>uma mensagem de erro se um ou ambos os jogadores não estiverem cadastrados.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Tratamento para comandos inválidos.</p>
+<p>Exibe mensagem de erro caso o comando digitado seja diferente de "FS" e não esteja listado.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

@@ -1,0 +1,574 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Trabalho Final: Referência do Arquivo src/ExecucaoPartidas.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Trabalho Final
+   </div>
+   <div id="projectbrief">Projeto final da disciplina de PDS2 - implementação de jogos.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Busca');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência do Arquivo ExecucaoPartidas.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Implementação das funções para execução das partidas e manipulação de resultados dos jogos.  
+<a href="#details">Mais...</a></p>
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;sstream&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &quot;ExecucaoPartidas.hpp&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Gráfico de dependência de inclusões para ExecucaoPartidas.cpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="ExecucaoPartidas_8cpp__incl.png" border="0" usemap="#src_2ExecucaoPartidas_8cpp" alt=""/></div>
+<!-- MAP 0 -->
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:a9109e6e4383d5b3587eb41e2f877818c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ExecucaoPartidas_8cpp.html#a9109e6e4383d5b3587eb41e2f877818c">escreverJogo</a> (std::ofstream &amp;arq_temp, int i, int vitorias, int derrotas)</td></tr>
+<tr class="memdesc:a9109e6e4383d5b3587eb41e2f877818c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Escreve no arquivo temporário os dados de vitória e derrota de um jogador.  <a href="#a9109e6e4383d5b3587eb41e2f877818c">Mais...</a><br /></td></tr>
+<tr class="separator:a9109e6e4383d5b3587eb41e2f877818c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43f502082a004c14144b76ebacbc27d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ExecucaoPartidas_8cpp.html#a43f502082a004c14144b76ebacbc27d3">pontuarJogadores</a> (std::string vencedor, std::string perdedor, int linha_modificar)</td></tr>
+<tr class="memdesc:a43f502082a004c14144b76ebacbc27d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Atualiza os registros de vitórias e derrotas dos jogadores após uma partida.  <a href="#a43f502082a004c14144b76ebacbc27d3">Mais...</a><br /></td></tr>
+<tr class="separator:a43f502082a004c14144b76ebacbc27d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17c2e04fe7d05ed0216b24b0f40cd1ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ExecucaoPartidas_8cpp.html#a17c2e04fe7d05ed0216b24b0f40cd1ac">rodadaVelha</a> (int turno, int &amp;vitoria, std::string apelido1, std::string apelido2, JogoDaVelha *&amp;tabuleiro)</td></tr>
+<tr class="memdesc:a17c2e04fe7d05ed0216b24b0f40cd1ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gerencia uma rodada do Jogo da Velha.  <a href="#a17c2e04fe7d05ed0216b24b0f40cd1ac">Mais...</a><br /></td></tr>
+<tr class="separator:a17c2e04fe7d05ed0216b24b0f40cd1ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9b06a02f0b0971801b35661ac84f8cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ExecucaoPartidas_8cpp.html#ae9b06a02f0b0971801b35661ac84f8cd">partidaVelha</a> (std::string apelidoJ1, std::string apelidoJ2, JogoDaVelha *&amp;tabuleiro)</td></tr>
+<tr class="memdesc:ae9b06a02f0b0971801b35661ac84f8cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executa uma partida completa de Jogo da Velha.  <a href="#ae9b06a02f0b0971801b35661ac84f8cd">Mais...</a><br /></td></tr>
+<tr class="separator:ae9b06a02f0b0971801b35661ac84f8cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb40b584270f5bee5e8d22ddff34f783"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ExecucaoPartidas_8cpp.html#aeb40b584270f5bee5e8d22ddff34f783">rodadaLig4</a> (int turno, int &amp;vitoria, std::string apelido1, std::string apelido2, Lig4 *&amp;tabuleiro)</td></tr>
+<tr class="memdesc:aeb40b584270f5bee5e8d22ddff34f783"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gerencia uma rodada do jogo Lig4.  <a href="#aeb40b584270f5bee5e8d22ddff34f783">Mais...</a><br /></td></tr>
+<tr class="separator:aeb40b584270f5bee5e8d22ddff34f783"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cfab320b1c4cbdd894724c2f6631795"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ExecucaoPartidas_8cpp.html#a2cfab320b1c4cbdd894724c2f6631795">partidaLig4</a> (std::string apelidoJ1, std::string apelidoJ2, Lig4 *&amp;tabuleiro)</td></tr>
+<tr class="memdesc:a2cfab320b1c4cbdd894724c2f6631795"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executa uma partida completa do jogo Lig4.  <a href="#a2cfab320b1c4cbdd894724c2f6631795">Mais...</a><br /></td></tr>
+<tr class="separator:a2cfab320b1c4cbdd894724c2f6631795"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c186e4d000fadc954c3687587bd9011"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ExecucaoPartidas_8cpp.html#a5c186e4d000fadc954c3687587bd9011">rodadaReversi</a> (int turno, int &amp;vitoria, std::string apelido1, std::string apelido2, Reversi *&amp;tabuleiro)</td></tr>
+<tr class="memdesc:a5c186e4d000fadc954c3687587bd9011"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gerencia uma rodada do jogo Reversi.  <a href="#a5c186e4d000fadc954c3687587bd9011">Mais...</a><br /></td></tr>
+<tr class="separator:a5c186e4d000fadc954c3687587bd9011"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7876934c8646d9fa665ffe53f380cee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ExecucaoPartidas_8cpp.html#ad7876934c8646d9fa665ffe53f380cee">partidaReversi</a> (std::string apelidoJ1, std::string apelidoJ2, Reversi *&amp;tabuleiro)</td></tr>
+<tr class="memdesc:ad7876934c8646d9fa665ffe53f380cee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executa uma partida completa do jogo Reversi.  <a href="#ad7876934c8646d9fa665ffe53f380cee">Mais...</a><br /></td></tr>
+<tr class="separator:ad7876934c8646d9fa665ffe53f380cee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a167964c29bd94d682b546ffdd426e12d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ExecucaoPartidas_8cpp.html#a167964c29bd94d682b546ffdd426e12d">executarPartida</a> (char tipoJogo, std::string apelidoJ1, std::string apelidoJ2)</td></tr>
+<tr class="memdesc:a167964c29bd94d682b546ffdd426e12d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicia uma partida de acordo com o tipo de jogo selecionado.  <a href="#a167964c29bd94d682b546ffdd426e12d">Mais...</a><br /></td></tr>
+<tr class="separator:a167964c29bd94d682b546ffdd426e12d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição Detalhada</h2>
+<div class="textblock"><p>Implementação das funções para execução das partidas e manipulação de resultados dos jogos. </p>
+<p>Este arquivo contém as funções necessárias para gerenciar partidas de diferentes tipos de jogos, registrar resultados e atualizar os dados dos jogadores. </p>
+</div><h2 class="groupheader">Funções</h2>
+<a id="a9109e6e4383d5b3587eb41e2f877818c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9109e6e4383d5b3587eb41e2f877818c">&#9670;&nbsp;</a></span>escreverJogo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void escreverJogo </td>
+          <td>(</td>
+          <td class="paramtype">std::ofstream &amp;&#160;</td>
+          <td class="paramname"><em>arq_temp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>vitorias</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>derrotas</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Escreve no arquivo temporário os dados de vitória e derrota de um jogador. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arq_temp</td><td>Arquivo temporário onde os dados serão escritos. </td></tr>
+    <tr><td class="paramname">i</td><td>Índice do tipo de jogo (0 = Reversi, 1 = Lig4, 2 = Jogo da Velha). </td></tr>
+    <tr><td class="paramname">vitorias</td><td>Número de vitórias do jogador. </td></tr>
+    <tr><td class="paramname">derrotas</td><td>Número de derrotas do jogador. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a167964c29bd94d682b546ffdd426e12d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a167964c29bd94d682b546ffdd426e12d">&#9670;&nbsp;</a></span>executarPartida()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void executarPartida </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>tipoJogo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>apelidoJ1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>apelidoJ2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inicia uma partida de acordo com o tipo de jogo selecionado. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tipoJogo</td><td>Tipo de jogo (R = Reversi, L = Lig4, V = Jogo da Velha). </td></tr>
+    <tr><td class="paramname">apelidoJ1</td><td>Apelido do jogador 1. </td></tr>
+    <tr><td class="paramname">apelidoJ2</td><td>Apelido do jogador 2. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2cfab320b1c4cbdd894724c2f6631795"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cfab320b1c4cbdd894724c2f6631795">&#9670;&nbsp;</a></span>partidaLig4()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void partidaLig4 </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>apelidoJ1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>apelidoJ2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Lig4 *&amp;&#160;</td>
+          <td class="paramname"><em>tabuleiro</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Executa uma partida completa do jogo Lig4. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">apelidoJ1</td><td>Apelido do jogador 1. </td></tr>
+    <tr><td class="paramname">apelidoJ2</td><td>Apelido do jogador 2. </td></tr>
+    <tr><td class="paramname">tabuleiro</td><td>Ponteiro para o objeto do jogo Lig4. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad7876934c8646d9fa665ffe53f380cee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7876934c8646d9fa665ffe53f380cee">&#9670;&nbsp;</a></span>partidaReversi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void partidaReversi </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>apelidoJ1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>apelidoJ2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Reversi *&amp;&#160;</td>
+          <td class="paramname"><em>tabuleiro</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Executa uma partida completa do jogo Reversi. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">apelidoJ1</td><td>Apelido do jogador 1. </td></tr>
+    <tr><td class="paramname">apelidoJ2</td><td>Apelido do jogador 2. </td></tr>
+    <tr><td class="paramname">tabuleiro</td><td>Ponteiro para o objeto do jogo Reversi. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae9b06a02f0b0971801b35661ac84f8cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9b06a02f0b0971801b35661ac84f8cd">&#9670;&nbsp;</a></span>partidaVelha()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void partidaVelha </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>apelidoJ1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>apelidoJ2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">JogoDaVelha *&amp;&#160;</td>
+          <td class="paramname"><em>tabuleiro</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Executa uma partida completa de Jogo da Velha. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">apelidoJ1</td><td>Apelido do jogador 1. </td></tr>
+    <tr><td class="paramname">apelidoJ2</td><td>Apelido do jogador 2. </td></tr>
+    <tr><td class="paramname">tabuleiro</td><td>Ponteiro para o objeto do jogo Jogo da Velha. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a43f502082a004c14144b76ebacbc27d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43f502082a004c14144b76ebacbc27d3">&#9670;&nbsp;</a></span>pontuarJogadores()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pontuarJogadores </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>vencedor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>perdedor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>linha_modificar</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Atualiza os registros de vitórias e derrotas dos jogadores após uma partida. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vencedor</td><td>Apelido do jogador vencedor. </td></tr>
+    <tr><td class="paramname">perdedor</td><td>Apelido do jogador perdedor. </td></tr>
+    <tr><td class="paramname">linha_modificar</td><td>Índice da linha do jogo que será modificada (0 = Reversi, 1 = Lig4, 2 = Jogo da Velha). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aeb40b584270f5bee5e8d22ddff34f783"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb40b584270f5bee5e8d22ddff34f783">&#9670;&nbsp;</a></span>rodadaLig4()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rodadaLig4 </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>turno</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>vitoria</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>apelido1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>apelido2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Lig4 *&amp;&#160;</td>
+          <td class="paramname"><em>tabuleiro</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gerencia uma rodada do jogo Lig4. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">turno</td><td>Indica o turno atual (0 = jogador 1, 1 = jogador 2). </td></tr>
+    <tr><td class="paramname">vitoria</td><td>Variável que indica se houve vitória na rodada (1 = vitória, 0 = sem vitória). </td></tr>
+    <tr><td class="paramname">apelido1</td><td>Apelido do jogador atual. </td></tr>
+    <tr><td class="paramname">apelido2</td><td>Apelido do adversário. </td></tr>
+    <tr><td class="paramname">tabuleiro</td><td>Ponteiro para o objeto do jogo Lig4. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5c186e4d000fadc954c3687587bd9011"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c186e4d000fadc954c3687587bd9011">&#9670;&nbsp;</a></span>rodadaReversi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rodadaReversi </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>turno</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>vitoria</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>apelido1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>apelido2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Reversi *&amp;&#160;</td>
+          <td class="paramname"><em>tabuleiro</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gerencia uma rodada do jogo Reversi. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">turno</td><td>Indica o turno atual (0 = jogador 1, 1 = jogador 2). </td></tr>
+    <tr><td class="paramname">vitoria</td><td>Variável que indica se houve vitória na rodada (1 = vitória, 0 = sem vitória). </td></tr>
+    <tr><td class="paramname">apelido1</td><td>Apelido do jogador atual. </td></tr>
+    <tr><td class="paramname">apelido2</td><td>Apelido do adversário. </td></tr>
+    <tr><td class="paramname">tabuleiro</td><td>Ponteiro para o objeto do jogo Reversi. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a17c2e04fe7d05ed0216b24b0f40cd1ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17c2e04fe7d05ed0216b24b0f40cd1ac">&#9670;&nbsp;</a></span>rodadaVelha()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rodadaVelha </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>turno</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>vitoria</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>apelido1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>apelido2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">JogoDaVelha *&amp;&#160;</td>
+          <td class="paramname"><em>tabuleiro</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gerencia uma rodada do Jogo da Velha. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">turno</td><td>Indica o turno atual (0 = jogador 1, 1 = jogador 2). </td></tr>
+    <tr><td class="paramname">vitoria</td><td>Variável que indica se houve vitória na rodada (1 = vitória, 0 = sem vitória). </td></tr>
+    <tr><td class="paramname">apelido1</td><td>Apelido do jogador atual. </td></tr>
+    <tr><td class="paramname">apelido2</td><td>Apelido do adversário. </td></tr>
+    <tr><td class="paramname">tabuleiro</td><td>Ponteiro para o objeto do jogo Jogo da Velha. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>
