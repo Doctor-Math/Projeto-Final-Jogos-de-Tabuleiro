@@ -1,7 +1,6 @@
 #include <iostream>
 #include <stdexcept>
 #include "JogoDaVelha.hpp"
-#include "doctest.h"
 
 //Tamanho do tabuleiro do jogo da velha
 const int TAM_LINHAS = 3, TAM_COL = 3;

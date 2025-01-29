@@ -44,5 +44,14 @@ $(OBJ_DIR)/Jogo_Tabuleiro: $(OBJ_DIR)/main.o $(OBJ_DIR)/JogoTabuleiro.o $(OBJ_DI
 	$(CC) $(CFLAGS) $(OBJ_DIR)/main.o $(OBJ_DIR)/JogoTabuleiro.o $(OBJ_DIR)/JogoDaVelha.o $(OBJ_DIR)/Lig4.o $(OBJ_DIR)/Reversi.o $(OBJ_DIR)/Cadastro.o $(OBJ_DIR)/ExecucaoPartidas.o -o $(OBJ_DIR)/Jogo_Tabuleiro
 
 # Limpeza de arquivos gerados
+# Variáveis para detectar o sistema operacional
+ifeq ($(OS),Windows_NT)
+    RM = del /f /q
+    EXT = .exe
+else
+    RM = rm -f
+    EXT =
+endif
+
 clean:
-	del /f /q obj\*.o obj\Jogo_Tabuleiro.exe
+	$(RM) obj/*.o obj/Jogo_Tabuleiro$(EXT)

@@ -4,7 +4,6 @@
 #include <sstream>
 #include <string>
 #include "Cadastro.hpp"
-#include "doctest.h"
 
 
 

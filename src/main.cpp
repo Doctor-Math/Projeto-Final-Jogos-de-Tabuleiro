@@ -1,9 +1,6 @@
-#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
-
 #include <iostream>
 #include "Cadastro.hpp"
 #include "ExecucaoPartidas.hpp"
-#include "doctest.h"
 
 
 /**
