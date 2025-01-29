@@ -52,7 +52,7 @@ void Lig4::validarJogada(int nulo, int coluna, int turno)
     }
     else
     {
-        std::cout << "ERRO: jogada inválida";
+        std::cout << "ERRO: jogada inválida"<<std::endl;
     }
 };
 

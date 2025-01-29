@@ -86,7 +86,7 @@ void Reversi::validarJogada(int linha, int coluna, int turno)
         }
         else
         {
-            std::cout << "ERRO: jogada inválida";
+            std::cout << "ERRO: jogada inválida"<<std::endl;
         }
     }
 }
