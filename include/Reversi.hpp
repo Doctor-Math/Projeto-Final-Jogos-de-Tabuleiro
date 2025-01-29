@@ -5,14 +5,17 @@
 #include <vector>
 #include "JogoTabuleiro.hpp"
 
-class Reversi: public JogoTabuleiro{
+class Reversi : public JogoTabuleiro
+{
 
-    public:
+public:
     Reversi();
-    void validarJogada(int,int,int) override;
-    int verificarVitoria(char) override;
+    void validarJogada(int, int, int) override;
+
+    int verificarVitoria(char);
+
     void imprimirTabuleiro() override;
-    bool verificarDirecao(int,int,int,int,int);
+    bool verificarDirecao(int, int, int, int, int);
     ~Reversi();
 };
 

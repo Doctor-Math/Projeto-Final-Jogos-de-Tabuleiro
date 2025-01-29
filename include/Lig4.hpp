@@ -5,12 +5,14 @@
 #include <vector>
 #include "JogoTabuleiro.hpp"
 
-class Lig4: public JogoTabuleiro{
+class Lig4 : public JogoTabuleiro
+{
 
-    public:
+public:
     Lig4();
-    void validarJogada(int,int,int) override;
-    int verificarVitoria(char) override;
+    int retornaLinha(int);
+    void validarJogada(int, int, int) override;
+    int verificarVitoria(char, int, int) override;
     void imprimirTabuleiro() override;
     ~Lig4();
 };
