@@ -13,3 +13,4 @@ void listarJogadores();
 int verificarCadastro(std::string apelidoJ1, std::string apelidoJ2);
 
 #endif
+
