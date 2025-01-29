@@ -1,12 +1,27 @@
 #include <iostream>
 #include "Lig4.hpp"
 
+
+
+// Constantes que definem o número de linhas e colunas do tabuleiro.
 const int TAM_LINHAS=6, TAM_COL=7;
 
+/**
+* @brief Construtor da classe Lig4.
+*Inicializa o tabuleiro com as dimensões padrão (6x7).
+*/
 Lig4::Lig4(){
     this->dimensionarTabuleiro(TAM_LINHAS, TAM_COL);
 };
 
+/**
+ * @brief Valida a jogada de um jogador e atualiza o tabuleiro.
+ * 
+ * @param nulo Parâmetro sem uso (incluso para compatibilidade).
+ * @param coluna Coluna escolhida para a jogada.
+ * @param turno Determina o jogador atual (0 para 'X' e 1 para 'O').
+ * @throws Exibe mensagem de erro se a jogada for inválida.
+ */
 void Lig4::validarJogada(int nulo, int coluna, int turno){
     int valido=0;
     coluna--;
@@ -22,6 +37,9 @@ void Lig4::validarJogada(int nulo, int coluna, int turno){
     };
 };
 
+/**
+ * @brief Exibe o estado atual do tabuleiro no console.
+ */
 void Lig4::imprimirTabuleiro(){
     for (int i=0;i<TAM_LINHAS;i++){
         std::cout<<"|";
@@ -36,6 +54,12 @@ void Lig4::imprimirTabuleiro(){
     };
 };
 
+/**
+ * @brief Verifica se um jogador venceu o jogo.
+ * 
+ * @param marcacao Caractere do jogador ('X' ou 'O').
+ * @return int Retorna 1 se houver vitória; 0 caso contrário.
+ */
 int Lig4::verificarVitoria(char marcacao)
 {
     int flag=0;
@@ -127,6 +151,10 @@ int Lig4::verificarVitoria(char marcacao)
     return flag;
 };
 
+/**
+ * @brief Destrutor da classe Lig4.
+ * Exibe mensagem de encerramento do jogo.
+ */
 Lig4::~Lig4(){
     std::cout<<"Encerrando o jogo..."<<std::endl;
 };

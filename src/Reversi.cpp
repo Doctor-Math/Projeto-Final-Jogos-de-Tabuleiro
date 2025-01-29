@@ -2,8 +2,15 @@
 #include <stdexcept>
 #include "Reversi.hpp"
 
+// Constantes que definem o número de linhas e colunas do tabuleiro.
 const int TAM_LINHAS = 8, TAM_COL=8;
 
+/**
+ * @brief Construtor da classe Reversi.
+ * 
+ * Inicializa o tabuleiro do jogo Reversi com dimensões 8x8 e configura
+ * as peças iniciais nas posições padrão para começar o jogo.
+ */
 Reversi::Reversi(){
     this->dimensionarTabuleiro(8,8);
     // Marcação das diagonais:
@@ -14,6 +21,12 @@ Reversi::Reversi(){
 }
 
 
+/**
+ * @brief Imprime o tabuleiro do jogo Reversi no console.
+ * 
+ * Este método exibe o tabuleiro atual do jogo, mostrando as posições
+ * ocupadas por 'X', 'O' e espaços vazios representados por ' '.
+ */
 void Reversi::imprimirTabuleiro(){
     for(int i=0;i<TAM_LINHAS;i++){
         std::cout<<"|";
@@ -28,6 +41,19 @@ void Reversi::imprimirTabuleiro(){
     };
 };
 
+/**
+ * @brief Valida a jogada de um jogador.
+ * 
+ * Verifica se a jogada realizada na posição especificada (linha, coluna) 
+ * é válida com base no turno atual do jogador e, se for válida, marca a posição 
+ * e realiza as alterações necessárias no tabuleiro.
+ * 
+ * @param linha Linha onde o jogador quer realizar a jogada (1 a 8).
+ * @param coluna Coluna onde o jogador quer realizar a jogada (1 a 8).
+ * @param turno Indica o turno atual do jogador (0 para 'X', 1 para 'O').
+ * 
+ * @throws std::out_of_range Caso a posição esteja fora dos limites do tabuleiro.
+ */
 void Reversi::validarJogada(int linha, int coluna, int turno) {   
     linha--;
     coluna--;
@@ -52,6 +78,20 @@ void Reversi::validarJogada(int linha, int coluna, int turno) {
     }
 }
 
+/**
+ * @brief Verifica a validade de uma jogada em uma direção específica.
+ * 
+ * Este método verifica se uma jogada na direção especificada (dLinha, dColuna)
+ * é válida. Caso seja válida, as peças adversárias na direção são invertidas.
+ * 
+ * @param linha Linha da posição onde a jogada foi realizada.
+ * @param coluna Coluna da posição onde a jogada foi realizada.
+ * @param turno Turno do jogador atual (0 para 'X', 1 para 'O').
+ * @param dLinha Direção da linha (-1, 0 ou 1).
+ * @param dColuna Direção da coluna (-1, 0 ou 1).
+ * @return true Se a jogada for válida na direção especificada.
+ * @return false Se a jogada for inválida na direção especificada.
+ */
 // Função auxiliar para verificar uma direção e inverter as peças
 bool Reversi::verificarDirecao(int linha, int coluna, int turno, int dLinha, int dColuna) {
     int i = linha + dLinha;
@@ -88,6 +128,20 @@ bool Reversi::verificarDirecao(int linha, int coluna, int turno, int dLinha, int
     return jogadaValida;  // Retorna se a jogada foi válida
 }
 
+/**
+ * @brief Verifica se há um vencedor no jogo.
+ * 
+ * Analisa o estado atual do tabuleiro para determinar se o jogo terminou
+ * e qual jogador venceu. Se nenhum jogador pode realizar jogadas, o jogo 
+ * termina e a contagem de peças decide o vencedor.
+ * 
+ * @param nulo Caractere representando posições vazias no tabuleiro ('\0').
+ * @return int Retorna:
+ * - 1 se o jogador 'X' venceu,
+ * - 2 se o jogador 'O' venceu,
+ * - 3 se houve empate,
+ * - 0 se o jogo ainda não terminou.
+ */
 int Reversi::verificarVitoria(char nulo) {
     int contX = 0; // Contador para as peças do jogador X
     int contO = 0; // Contador para as peças do jogador O
@@ -133,7 +187,10 @@ int Reversi::verificarVitoria(char nulo) {
     return 0;
 }
 
-
+/**
+ * @brief Destrutor da classe Reversi.
+ * Exibe uma mensagem indicando que o jogo está sendo encerrado.
+ */
 Reversi::~Reversi(){
     std::cout<<"Encerrando o jogo..."<<std::endl;
 };
