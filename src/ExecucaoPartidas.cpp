@@ -11,6 +11,7 @@
 #include <sstream>
 #include <string>
 #include "ExecucaoPartidas.hpp"
+#include "doctest.h"
 
 
 

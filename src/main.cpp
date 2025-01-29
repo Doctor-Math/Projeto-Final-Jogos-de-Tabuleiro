@@ -1,6 +1,10 @@
+#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
+
 #include <iostream>
 #include "Cadastro.hpp"
 #include "ExecucaoPartidas.hpp"
+#include "doctest.h"
+
 
 /**
  * @brief Função principal do sistema de jogos de tabuleiro.

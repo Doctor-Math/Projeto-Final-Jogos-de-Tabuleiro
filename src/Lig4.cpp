@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Lig4.hpp"
+#include "doctest.h"
 
 
 

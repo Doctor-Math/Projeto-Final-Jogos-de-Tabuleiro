@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stdexcept>
 #include "JogoDaVelha.hpp"
+#include "doctest.h"
 
 // Tamanho do tabuleiro do jogo da velha
 const int TAMANHO=3;

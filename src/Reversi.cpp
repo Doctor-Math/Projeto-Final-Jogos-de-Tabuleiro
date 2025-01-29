@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stdexcept>
 #include "Reversi.hpp"
+#include "doctest.h"
 
 // Constantes que definem o número de linhas e colunas do tabuleiro.
 const int TAM_LINHAS = 8, TAM_COL=8;

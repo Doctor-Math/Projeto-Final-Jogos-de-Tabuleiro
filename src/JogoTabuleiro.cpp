@@ -1,5 +1,6 @@
 #include <iostream>
 #include "JogoTabuleiro.hpp"
+#include "doctest.h"
 
 /**
  * @brief Construtor da classe JogoTabuleiro.
