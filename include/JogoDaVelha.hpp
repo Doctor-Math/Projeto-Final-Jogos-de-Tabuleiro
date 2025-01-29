@@ -5,12 +5,13 @@
 #include <vector>
 #include "JogoTabuleiro.hpp"
 
-class JogoDaVelha: public JogoTabuleiro{
+class JogoDaVelha : public JogoTabuleiro
+{
 
-    public:
+public:
     JogoDaVelha();
-    void validarJogada(int,int,int) override;
-    int verificarVitoria(char) override;
+    void validarJogada(int, int, int) override;
+    int verificarVitoria(char, int, int) override;
     void imprimirTabuleiro() override;
     ~JogoDaVelha();
 };
