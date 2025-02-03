@@ -1,8 +1,6 @@
 <h1 align="center">                                                    Projeto Final - Jogos de Tabuleiro ♟ </h1>
 
-**Aplicar os conceitos de PDS2 em um programa funcional que reflete nosso aprendizado durante as aulas**
-
-- Participantes 🧑‍💻: Guilherme Bueno de Andrade Motta,  Gustavo Cabral Gonçalves, Matheus Soares e Renato Lucas
+- Contribuintes 🧑‍💻: Guilherme Bueno de Andrade Motta,  Gustavo Cabral Gonçalves, Matheus Soares e Renato Lucas
 
 **Introdução**
 
@@ -74,7 +72,24 @@ A modularização foi dividida em pastas. Os arquivos hpp, que estão na pasta i
 
 # Funcionamento Do Programa 🧑‍💻
 
-## Cadastro de jogador
+#### Compilação
+##### - Linux:
+```plaintext
+make 
+```
+##### - Windows:
+```plaintext
+mingw32-make 
+```
+
+#### Execução
+```plaintext
+./obj/Jogo_Tabuleiro
+```
+
+
+## Comandos: Exemplos de entrada e saída
+### Cadastro de jogador
 **Entrada:**
 ```plaintext
 CJ
@@ -90,7 +105,7 @@ Jogador Math cadastrado com sucesso
 
 ---
 
-## Remoção de jogador
+### Remoção de jogador
 **Entrada:**
 ```plaintext
 RJ
@@ -104,7 +119,7 @@ Jogador Math removido com sucesso!
 
 ---
 
-## Listar jogadores
+### Listar jogadores
 **Entrada:**
 ```plaintext
 LJ
@@ -125,7 +140,7 @@ VELHA - V: 1 D: 0
 
 ---
 
-## Executar partida
+### Executar partida
 **Entrada:**
 ```plaintext
 EP
@@ -144,16 +159,11 @@ Turno do jogador DoctorMath:
 
 ---
 
-## Finalizar sistema
+### Finalizar sistema
 **Entrada:**
 ```plaintext
 FS
 ```
-
-
-No início do programa o usuário pode se cadastrar escolhendo o seu nome e apelido, esses dados vão para um arquivo no qual o usuário pode cadastrar mais jogadores ou remover os já criados. Após o cadastro, o usuário escolhe qual jogo ele quer iniciar a depender das letras que ele digitar, por exemplo R -> Reversi, L ->Lig e V-> Jogo da Velha. Na execução das partidas o usuário deve entrar com os apelidos dos dois jogadores e o sistema mostrar uma partida do jogo selecionado, sendo ela interatica na qual os dois jogadores podem competir entre si. Durante a partida o sistema ele é capaz de checar se uma jogada é válida ou não, atualizar o jogo a cada jogada e testar uma possível vitória de um jogador. No final do jogo, o programa mostra o vencedor e no banco de dados que contém os nomes e apelidos dos jogadores ele atualiza as estatísticas dos indivíduos.
-
-
 
 # Dificuldades 😮‍💨
 
