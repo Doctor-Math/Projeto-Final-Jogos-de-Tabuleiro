@@ -17,95 +17,139 @@ O programa é dividido em módulos para que ele seja melhor organizado fácilita
 
 A modularização foi dividida em pastas. Os arquivos hpp, que estão na pasta include, Definem as classes e funções utilizadas no projeto. Já os arquivos com as implementações, os cpp, estão na pasta src, eles definem as classes e funções utilizadas no projeto para serem utilizadas no arquivo main. Além deles temos o arquivo principal(main) e o Makefile, o primeiro deles é responsável por executar o programa e o segundo é encarregado de compilar o projeto automaticamente.
 
-***CLASSES🥋***
+# Modelagem CRC 📌  
 
-**🟣Classe Abstrata**: JogoTabuleiro 
+## 🟣 Classe Abstrata: JogoTabuleiro  
 
-🧐Responsabilidades: 
+| **Classe**       | **Responsabilidades** | **Colaboração** |
+|------------------|------------------------|--------------------|
+| **JogoTabuleiro** | - Fornecer a estrutura do tabuleiro  | - Nenhuma |
+|                  | - Fornecer peças  | |
+|                  | - Ler uma jogada  | |
+|                  | - Testar a validade da jogada  | |
+|                  | - Testar condições de vitória  | |
+|                  | - Imprimir tabuleiro  | |
 
-Fornecer a estrutura do tabuleiro; 
+---
 
-Fornecer peças;
+## 🟠 Classe Herdeira: JogoDaVelha  
 
-Ler uma jogada; 
+| **Classe**       | **Responsabilidades** | **Colaboração** |
+|------------------|------------------------|--------------------|
+| **JogoDaVelha**  | - (Herdado) Fornecer a estrutura do tabuleiro  | - `JogoTabuleiro` |
+|                  | - (Herdado) Fornecer peças  | |
+|                  | - (Herdado) Ler uma jogada  | |
+|                  | - (Sobrescreve) `validarJogada()`: Testa a validade da jogada no Jogo da Velha  | |
+|                  | - (Sobrescreve) `verificarVitoria()`: Testa as condições de vitória específicas  | |
+|                  | - (Sobrescreve) `imprimirTabuleiro()`: Imprime o tabuleiro  | |
 
-Testar a validade da jogada; 
+---
 
-Testar condições de vitória; 
+## 🟠 Classe Herdeira: Lig4  
 
-Imprimir tabuleiro.
+| **Classe**  | **Responsabilidades** | **Colaboração** |
+|-------------|------------------------|--------------------|
+| **Lig4**    | - (Herdado) Fornecer a estrutura do tabuleiro  | - `JogoTabuleiro` |
+|             | - (Herdado) Fornecer peças  | |
+|             | - (Herdado) Ler uma jogada  | |
+|             | - (Sobrescreve) `validarJogada()`: Testa a validade da jogada no Lig4  | |
+|             | - (Sobrescreve) `verificarVitoria()`: Testa as condições de vitória específicas  | |
+|             | - (Sobrescreve) `imprimirTabuleiro()`: Imprime o tabuleiro  | |
 
-🤝Colaboração:
+---
 
-Nenhuma.  
+## 🟠 Classe Herdeira: Reversi  
 
+| **Classe**  | **Responsabilidades** | **Colaboração** |
+|-------------|------------------------|--------------------|
+| **Reversi** | - (Herdado) Fornecer a estrutura do tabuleiro  | - `JogoTabuleiro` |
+|             | - (Herdado) Fornecer peças  | |
+|             | - (Herdado) Ler uma jogada  | |
+|             | - (Sobrescreve) `validarJogada()`: Testa a validade da jogada no Reversi  | |
+|             | - (Sobrescreve) `verificarVitoria()`: Testa as condições de vitória específicas  | |
+|             | - (Sobrescreve) `imprimirTabuleiro()`: Imprime o tabuleiro  | |
+|             | - **Novo método:** `verificarDirecao(int, int, int, int, int)`: Verifica se há peças alinhadas em uma determinada direção  | |
 
-**🟠Classe Herdeira**: JogoDaVelha
-
-🧐Responsabilidades:
-
-(Herdada de JogoTabuleiro) Fornecer a estrutura do tabuleiro; 
-
-(Herdada de JogoTabuleiro) Fornecer peças; 
-
-(Herdada de JogoTabuleiro) Ler uma jogada; 
-
-(Herdada de JogoTabuleiro) Sobrescreve o método validarJogada() para testar a validade da jogada no jogo da velha; 
-
-(Herdada de JogoTabuleiro) Sobrescreve o método verificarVitoria() para testar as condições de vitória específicas do jogo da velha; 
-
-(Herdada de JogoTabuleiro) Sobrescreve o método imprimirTabuleiro() para imprimir o tabuleiro. 
-
-🤝Colaboração: 
-
-JogoTabuleiro.
-
-
-**🟠Classe Herdeira**: Lig4
-
-🧐Responsabilidades:
-
-(Herdada de JogoTabuleiro) Fornecer a estrutura do tabuleiro; 
-
-(Herdada de JogoTabuleiro) Fornecer peças; 
-
-(Herdada de JogoTabuleiro) Ler uma jogada; 
-
-(Herdada de JogoTabuleiro) Sobrescreve o método validarJogada() para testar a validade da jogada no jogo lig4; 
-
-(Herdada de JogoTabuleiro) Sobrescreve o método verificarVitoria() para testar as condições de vitória específicas do lig4; 
-
-(Herdada de JogoTabuleiro) Sobrescreve o método imprimirTabuleiro() para imprimir o tabuleiro. 
-
-🤝Colaboração: 
-
-JogoTabuleiro.
-
-
-**🟠Classe Herdeira**: Reversi
-
-🧐Responsabilidades:
-
-(Herdado de JogoTabuleiro) Fornecer a estrutura do tabuleiro.
-
-(Herdado de JogoTabuleiro) Fornecer peças.
-
-(Herdado de JogoTabuleiro) Ler uma jogada.
-
-(Herdado de JogoTabuleiro) Sobrescreve o método validarJogada() para testar a validade da jogada no jogo Reversi.
-
-(Herdado de JogoTabuleiro) Sobrescreve o método verificarVitoria() para verificar as condições de vitória específicas do Reversi.
-
-(Herdado de JogoTabuleiro) Sobrescreve o método imprimirTabuleiro() para imprimir o tabuleiro
-
-Novo método verificarDirecao(int, int, int, int, int): Método que verifica se há peças alinhadas em uma determinada direção (útil para capturar peças no Reversi).
-
-🤝Colaboração: 
-
-JogoTabuleiro.
 
 
 # Funcionamento Do Programa 🧑‍💻
+
+## Cadastro de jogador
+**Entrada:**
+```plaintext
+CJ
+Math
+Matheus
+```
+**Saída:**
+```plaintext
+Digite o apelido do jogador:
+Digite o nome do jogador:
+Jogador Math cadastrado com sucesso
+```
+
+---
+
+## Remoção de jogador
+**Entrada:**
+```plaintext
+RJ
+Math
+```
+**Saída:**
+```plaintext
+Digite o apelido do jogador a ser removido:
+Jogador Math removido com sucesso!
+```
+
+---
+
+## Listar jogadores
+**Entrada:**
+```plaintext
+LJ
+```
+**Saída:**
+```plaintext
+RenatoValis Renato
+REVERSI - V: 0 D: 0
+LIG4 - V: 0 D: 1
+VELHA - V: 0 D: 1
+--------------------
+DoctorMath Matheus
+REVERSI - V: 0 D: 0
+LIG4 - V: 1 D: 0
+VELHA - V: 1 D: 0
+--------------------
+```
+
+---
+
+## Executar partida
+**Entrada:**
+```plaintext
+EP
+V
+DoctorMath
+RenatoValis
+```
+**Saída:**
+```plaintext
+Jogo: 
+Apelido do jogador 1:
+Apelido do jogador 2:
+AGUARDE: Abrindo o tabuleiro, organizando as peças...
+Turno do jogador DoctorMath:
+```
+
+---
+
+## Finalizar sistema
+**Entrada:**
+```plaintext
+FS
+```
+
 
 No início do programa o usuário pode se cadastrar escolhendo o seu nome e apelido, esses dados vão para um arquivo no qual o usuário pode cadastrar mais jogadores ou remover os já criados. Após o cadastro, o usuário escolhe qual jogo ele quer iniciar a depender das letras que ele digitar, por exemplo R -> Reversi, L ->Lig e V-> Jogo da Velha. Na execução das partidas o usuário deve entrar com os apelidos dos dois jogadores e o sistema mostrar uma partida do jogo selecionado, sendo ela interatica na qual os dois jogadores podem competir entre si. Durante a partida o sistema ele é capaz de checar se uma jogada é válida ou não, atualizar o jogo a cada jogada e testar uma possível vitória de um jogador. No final do jogo, o programa mostra o vencedor e no banco de dados que contém os nomes e apelidos dos jogadores ele atualiza as estatísticas dos indivíduos.
 
