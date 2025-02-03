@@ -21,7 +21,7 @@ A modularização foi dividida em pastas. Os arquivos hpp, que estão na pasta i
 
 | **Classe**       | **Responsabilidades** | **Colaboração** |
 |------------------|------------------------|--------------------|
-| **JogoTabuleiro** | - Fornecer a estrutura do tabuleiro  | - Nenhuma |
+| **JogoTabuleiro** | - Fornecer a estrutura do tabuleiro  | Nenhuma |
 |                  | - Fornecer peças  | |
 |                  | - Ler uma jogada  | |
 |                  | - Testar a validade da jogada  | |
@@ -34,7 +34,7 @@ A modularização foi dividida em pastas. Os arquivos hpp, que estão na pasta i
 
 | **Classe**       | **Responsabilidades** | **Colaboração** |
 |------------------|------------------------|--------------------|
-| **JogoDaVelha**  | - (Herdado) Fornecer a estrutura do tabuleiro  | - `JogoTabuleiro` |
+| **JogoDaVelha**  | - (Herdado) Fornecer a estrutura do tabuleiro  | `JogoTabuleiro` |
 |                  | - (Herdado) Fornecer peças  | |
 |                  | - (Herdado) Ler uma jogada  | |
 |                  | - (Sobrescreve) `validarJogada()`: Testa a validade da jogada no Jogo da Velha  | |
@@ -47,7 +47,7 @@ A modularização foi dividida em pastas. Os arquivos hpp, que estão na pasta i
 
 | **Classe**  | **Responsabilidades** | **Colaboração** |
 |-------------|------------------------|--------------------|
-| **Lig4**    | - (Herdado) Fornecer a estrutura do tabuleiro  | - `JogoTabuleiro` |
+| **Lig4**    | - (Herdado) Fornecer a estrutura do tabuleiro  | `JogoTabuleiro` |
 |             | - (Herdado) Fornecer peças  | |
 |             | - (Herdado) Ler uma jogada  | |
 |             | - (Sobrescreve) `validarJogada()`: Testa a validade da jogada no Lig4  | |
@@ -60,7 +60,7 @@ A modularização foi dividida em pastas. Os arquivos hpp, que estão na pasta i
 
 | **Classe**  | **Responsabilidades** | **Colaboração** |
 |-------------|------------------------|--------------------|
-| **Reversi** | - (Herdado) Fornecer a estrutura do tabuleiro  | - `JogoTabuleiro` |
+| **Reversi** | - (Herdado) Fornecer a estrutura do tabuleiro  | `JogoTabuleiro` |
 |             | - (Herdado) Fornecer peças  | |
 |             | - (Herdado) Ler uma jogada  | |
 |             | - (Sobrescreve) `validarJogada()`: Testa a validade da jogada no Reversi  | |
