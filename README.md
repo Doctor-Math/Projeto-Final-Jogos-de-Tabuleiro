@@ -8,16 +8,21 @@ Neste projeto, vamos aplicar técnicas aprendidas em sala de aula com o objetivo
 
 # Projeto 🏆
 
-
-**Modularização 🐉**
+## Índice
+- Modularização
+- Modelagem CRC
+- Funcionamento do programa
+- Dificuldades
+  
+## Modularização 🐉
 
 O programa é dividido em módulos para que ele seja melhor organizado fácilitando a entende-lo e também para ajudar o trabalho em equipe para que vários participantes possam programas em diferentes módulos ao mesmo tempo. 
 
 A modularização foi dividida em pastas. Os arquivos hpp, que estão na pasta include, Definem as classes e funções utilizadas no projeto. Já os arquivos com as implementações, os cpp, estão na pasta src, eles definem as classes e funções utilizadas no projeto para serem utilizadas no arquivo main. Além deles temos o arquivo principal(main) e o Makefile, o primeiro deles é responsável por executar o programa e o segundo é encarregado de compilar o projeto automaticamente.
 
-# Modelagem CRC 📌  
+## Modelagem CRC 📌  
 
-## 🟣 Classe Abstrata: JogoTabuleiro  
+### 🟣 Classe Abstrata: JogoTabuleiro  
 
 | **Classe**       | **Responsabilidades** | **Colaboração** |
 |------------------|------------------------|--------------------|
@@ -30,7 +35,7 @@ A modularização foi dividida em pastas. Os arquivos hpp, que estão na pasta i
 
 ---
 
-## 🟠 Classe Herdeira: JogoDaVelha  
+### 🟠 Classe Herdeira: JogoDaVelha  
 
 | **Classe**       | **Responsabilidades** | **Colaboração** |
 |------------------|------------------------|--------------------|
@@ -43,7 +48,7 @@ A modularização foi dividida em pastas. Os arquivos hpp, que estão na pasta i
 
 ---
 
-## 🟠 Classe Herdeira: Lig4  
+### 🟠 Classe Herdeira: Lig4  
 
 | **Classe**  | **Responsabilidades** | **Colaboração** |
 |-------------|------------------------|--------------------|
@@ -56,7 +61,7 @@ A modularização foi dividida em pastas. Os arquivos hpp, que estão na pasta i
 
 ---
 
-## 🟠 Classe Herdeira: Reversi  
+### 🟠 Classe Herdeira: Reversi  
 
 | **Classe**  | **Responsabilidades** | **Colaboração** |
 |-------------|------------------------|--------------------|
@@ -70,7 +75,7 @@ A modularização foi dividida em pastas. Os arquivos hpp, que estão na pasta i
 
 
 
-# Funcionamento Do Programa 🧑‍💻
+## Funcionamento Do Programa 🧑‍💻
 
 #### Compilação
 ##### - Linux:
